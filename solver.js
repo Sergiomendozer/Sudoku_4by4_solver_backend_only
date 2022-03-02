@@ -5,11 +5,10 @@
 // var queryAll = document.querySelectorAll(".unicycle, #div2");
 var div1 = document.getElementById("div1");
 var text = "<h1>Hello World</h1>";
-
-// div1.innerHTML = text;
-
 document.getElementById("div1").innerHTML = text;
 
 var table = document.getElementById("table");
-var first_sudoku = "<h1>[[1], [2], [3], [4]]</h1>";
+var first_sudoku = "<h1>[[X,X,X,X] [1,X,2,X], [X,1,4,X], [2,X,X,1]]</h1>";
 document.getElementById("table").innerHTML = first_sudoku;
+
+// make tag and array then h1 = array[1], h2= array[2]
