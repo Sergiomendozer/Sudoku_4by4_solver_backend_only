@@ -17,4 +17,16 @@
 // N this indicates that you can put number -N- in position,
 
 //!put number n in a position
-//
+//first find the column that has the least number of Y's in it
+// that column gets the number N
+
+//!function back to X
+// replace N and Y with X to be able to repeat another function
+// repeat function put N and Y, unless=>
+// number in the sting is in every column :
+// if array[1].find !=1
+// if array[2].find !=1 ........all
+
+// else move onto next number = array has of order to go it
+//on last number fill in
+// once row array has gone over 4 stop it is solved
