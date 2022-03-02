@@ -10,5 +10,3 @@ document.getElementById("div1").innerHTML = text;
 var table = document.getElementById("table");
 var first_sudoku = "<h1>[[X,X,X,X] [1,X,2,X], [X,1,4,X], [2,X,X,1]]</h1>";
 document.getElementById("table").innerHTML = first_sudoku;
-
-// make tag and array then h1 = array[1], h2= array[2]
