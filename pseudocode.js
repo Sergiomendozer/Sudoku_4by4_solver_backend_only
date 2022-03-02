@@ -28,5 +28,5 @@
 // if array[2].find !=1 ........all
 
 // else move onto next number = array has of order to go it
-//on last number fill in
-// once row array has gone over 4 stop it is solved
+//on last number fill in all positions that have X
+// solved
