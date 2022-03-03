@@ -28,7 +28,9 @@ document.getElementById("table_2").innerHTML = second_col;
 document.getElementById("table_3").innerHTML = third_col;
 document.getElementById("table_4").innerHTML = forth_col;
 //////////////////////////////////
+var dict = {};
 function counter_for_numbers_in_chart(sudoku, sudoku_num, counter) {
+  console.log(dict);
   for (let i = 0; i < 4; i++) {
     if (sudoku[i].indexOf(sudoku_num) != -1) {
       counter++;
@@ -45,13 +47,11 @@ var count_one = 0;
 var count_two = 0;
 var count_three = 0;
 var count_four = 0;
-var dict = {
-  1: "",
-  2: "",
-  3: "",
-  4: "",
-};
-console.log(dict);
+
+// var dict = [];
+// console.log(dict);
+// dict["one"] = 5;
+// console.log(dict);
 
 counter_for_numbers_in_chart(first_sudoku, one, count_one);
 counter_for_numbers_in_chart(first_sudoku, two, count_two);
