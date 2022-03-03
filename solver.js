@@ -27,18 +27,26 @@ document.getElementById("table_1").innerHTML = first_col;
 document.getElementById("table_2").innerHTML = second_col;
 document.getElementById("table_3").innerHTML = third_col;
 document.getElementById("table_4").innerHTML = forth_col;
-
-function counter_for_numbers_in_chart(sudoku, sudoku_num) {
-  var count_one = 0;
+//////////////////////////////////
+function counter_for_numbers_in_chart(sudoku, sudoku_num, counter) {
   for (let i = 0; i < 4; i++) {
     if (sudoku[i].indexOf(sudoku_num) != -1) {
-      count_one++;
+      counter++;
     }
   }
-  console.log(`count ${count_one}`);
+  console.log(`count ${counter}`);
 }
 
 var one = "1";
 var two = "2";
+var three = "3";
+var four = "4";
+var count_one = 0;
+var count_two = 0;
+var count_three = 0;
+var count_four = 0;
 
-counter_for_numbers_in_chart(first_sudoku, one);
+counter_for_numbers_in_chart(first_sudoku, one, count_one);
+counter_for_numbers_in_chart(first_sudoku, two, count_two);
+counter_for_numbers_in_chart(first_sudoku, three, count_three);
+counter_for_numbers_in_chart(first_sudoku, four, count_four);
