@@ -7,9 +7,6 @@ var div1 = document.getElementById("div1");
 var text = "<h1>Hello World</h1>";
 document.getElementById("div1").innerHTML = text;
 
-// var first_sudoku = "<h1>[[X,X,X,X] [1,X,2,X], [X,1,4,X], [2,X,X,1]]</h1>";
-// var first_sudoku = "[[X,X,X,X,1,X,2,X,X,1,4,X,2,X,X,1]]";
-// var first_sudoku = [["X","X","X","X"] [1,X,2,X], [X,1,4,X], [2,X,X,1]];
 var table_1 = document.getElementById("table_1");
 var table_2 = document.getElementById("table_2");
 var table_3 = document.getElementById("table_3");
@@ -30,3 +27,10 @@ document.getElementById("table_1").innerHTML = first_col;
 document.getElementById("table_2").innerHTML = second_col;
 document.getElementById("table_3").innerHTML = third_col;
 document.getElementById("table_4").innerHTML = forth_col;
+
+function counter_for_numbers_in_chart(sudoku) {
+  console.log(sudoku[2].indexOf("X"));
+  console.log("Called");
+}
+
+counter_for_numbers_in_chart(first_sudoku);
