@@ -31,20 +31,14 @@ document.getElementById("table_4").innerHTML = forth_col;
 function counter_for_numbers_in_chart(sudoku, sudoku_num) {
   var count_one = 0;
   for (let i = 0; i < 4; i++) {
-    console.log(sudoku[i].indexOf(sudoku_num));
     if (sudoku[i].indexOf(sudoku_num) != -1) {
       count_one++;
-      console.log(`count ${count_one}`);
     }
   }
-
-  //   console.log(sudoku[i].indexOf(sudoku_num));
-  //   console.log(sudoku[1].indexOf(sudoku_num));
-  //   console.log(sudoku[2].indexOf(sudoku_num));
-  //   console.log(sudoku[3].indexOf(sudoku_num));
-  //   console.log("Called");
+  console.log(`count ${count_one}`);
 }
 
 var one = "1";
 var two = "2";
+
 counter_for_numbers_in_chart(first_sudoku, one);
