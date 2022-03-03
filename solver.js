@@ -28,12 +28,22 @@ document.getElementById("table_2").innerHTML = second_col;
 document.getElementById("table_3").innerHTML = third_col;
 document.getElementById("table_4").innerHTML = forth_col;
 
-function counter_for_numbers_in_chart(sudoku) {
-  console.log(sudoku[0].indexOf("1"));
-  console.log(sudoku[1].indexOf("1"));
-  console.log(sudoku[2].indexOf("1"));
-  console.log(sudoku[3].indexOf("1"));
-  console.log("Called");
+function counter_for_numbers_in_chart(sudoku, sudoku_num) {
+  var count_one = 0;
+  for (let i = 0; i < 4; i++) {
+    console.log(sudoku[i].indexOf(sudoku_num));
+    if (sudoku[i].indexOf(sudoku_num) != -1) {
+      count_one = +1;
+      console.log(`count ${count_one}`);
+    }
+  }
+  //   console.log(sudoku[i].indexOf(sudoku_num));
+  //   console.log(sudoku[1].indexOf(sudoku_num));
+  //   console.log(sudoku[2].indexOf(sudoku_num));
+  //   console.log(sudoku[3].indexOf(sudoku_num));
+  //   console.log("Called");
 }
 
-counter_for_numbers_in_chart(first_sudoku);
+var one = "1";
+var two = "2";
+counter_for_numbers_in_chart(first_sudoku, one);
