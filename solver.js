@@ -28,32 +28,91 @@ document.getElementById("table_2").innerHTML = second_col;
 document.getElementById("table_3").innerHTML = third_col;
 document.getElementById("table_4").innerHTML = forth_col;
 //////////////////////////////////
-var dict = {};
-function counter_for_numbers_in_chart(sudoku, sudoku_num, counter) {
-  console.log(dict);
+// var dict = {};
+// function sort_dict() {
+//   console.log(dict);
+//     var sorted_dict = [];
+//     for (var x in dict) {
+//       sorted_dict.push(dict[x]);
+//     }
+//   dict.sort(function (a, b) {
+//     return b[1] - a[1];
+//   });
+//   console.log(dict);
+// }
+var count_one = 0;
+var count_two = 0;
+var count_three = 0;
+var count_four = 0;
+
+function counter_1(sudoku, sudoku_num, counter) {
   for (let i = 0; i < 4; i++) {
     if (sudoku[i].indexOf(sudoku_num) != -1) {
       counter++;
     }
   }
-  console.log(`count ${counter}`);
+  count_one = counter;
+  console.log(`one:${counter}`);
+}
+
+function counter_2(sudoku, sudoku_num, counter) {
+  for (let i = 0; i < 4; i++) {
+    if (sudoku[i].indexOf(sudoku_num) != -1) {
+      counter++;
+    }
+  }
+  count_two = counter;
+  console.log(`two:${counter}`);
+}
+
+function counter_3(sudoku, sudoku_num, counter) {
+  for (let i = 0; i < 4; i++) {
+    if (sudoku[i].indexOf(sudoku_num) != -1) {
+      counter++;
+    }
+  }
+  count_three = counter;
+  console.log(`three:${counter}`);
+}
+function counter_4(sudoku, sudoku_num, counter) {
+  for (let i = 0; i < 4; i++) {
+    if (sudoku[i].indexOf(sudoku_num) != -1) {
+      counter++;
+    }
+  }
+  count_four = counter;
+  console.log(`four:${counter}`);
+}
+
+function order_of_sudoku_numbers() {
+  var dict = {};
+  dict["one"] = count_one;
+  dict["two"] = count_two;
+  dict["three"] = count_three;
+  dict["four"] = count_four;
+
+  console.log(dict);
+
+  var sortable = [];
+  for (var count in dict) {
+    sortable.push([count, dict[count]]);
+  }
+
+  sortable.sort(function (a, b) {
+    return b[1] - a[1];
+  });
+  console.log(sortable);
+
+  console.log(sortable[0][0]);
 }
 
 var one = "1";
 var two = "2";
 var three = "3";
 var four = "4";
-var count_one = 0;
-var count_two = 0;
-var count_three = 0;
-var count_four = 0;
 
-// var dict = [];
-// console.log(dict);
-// dict["one"] = 5;
-// console.log(dict);
-
-counter_for_numbers_in_chart(first_sudoku, one, count_one);
-counter_for_numbers_in_chart(first_sudoku, two, count_two);
-counter_for_numbers_in_chart(first_sudoku, three, count_three);
-counter_for_numbers_in_chart(first_sudoku, four, count_four);
+counter_1(first_sudoku, one, count_one);
+counter_2(first_sudoku, two, count_two);
+counter_3(first_sudoku, three, count_three);
+counter_4(first_sudoku, four, count_four);
+order_of_sudoku_numbers();
