@@ -1,4 +1,4 @@
-// make tag and array then h1 = array[1], h2= array[2]
+//? make tag and array then h1 = array[1], h2= array[2]
 // add pseudo-code to function when made
 // row = horizontal, column = vertical
 

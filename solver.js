@@ -29,7 +29,10 @@ document.getElementById("table_3").innerHTML = third_col;
 document.getElementById("table_4").innerHTML = forth_col;
 
 function counter_for_numbers_in_chart(sudoku) {
-  console.log(sudoku[2].indexOf("X"));
+  console.log(sudoku[0].indexOf("1"));
+  console.log(sudoku[1].indexOf("1"));
+  console.log(sudoku[2].indexOf("1"));
+  console.log(sudoku[3].indexOf("1"));
   console.log("Called");
 }
 
