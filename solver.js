@@ -45,6 +45,13 @@ var count_one = 0;
 var count_two = 0;
 var count_three = 0;
 var count_four = 0;
+var dict = {
+  1: "",
+  2: "",
+  3: "",
+  4: "",
+};
+console.log(dict);
 
 counter_for_numbers_in_chart(first_sudoku, one, count_one);
 counter_for_numbers_in_chart(first_sudoku, two, count_two);
