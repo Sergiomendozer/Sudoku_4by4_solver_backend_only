@@ -108,6 +108,7 @@ function order_of_sudoku_numbers() {
 //TODO: [0][0] should be function name
 function can_you_put_a_1_pos0_0() {
   console.log(first_sudoku);
+  //   if = 1, 2 3 or 4 skip to next function
   if (
     first_sudoku[0].indexOf("1") == -1 &&
     first_sudoku[1][0].indexOf("1") == -1 &&
