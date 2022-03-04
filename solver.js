@@ -106,27 +106,64 @@ function order_of_sudoku_numbers() {
 
 //TODO: no for loop need to call another section after
 //TODO: [0][0] should be function name
+function can_you_put_a_1_pos3_3() {
+  console.log(first_sudoku);
+}
+function can_you_put_a_1_pos3_2() {
+  console.log(first_sudoku);
+}
+function can_you_put_a_1_pos3_1() {
+  console.log(first_sudoku);
+}
+function can_you_put_a_1_pos3_0() {
+  console.log(first_sudoku);
+}
+function can_you_put_a_1_pos2_3() {
+  console.log(first_sudoku);
+}
+function can_you_put_a_1_pos2_2() {
+  console.log(first_sudoku);
+}
+function can_you_put_a_1_pos2_1() {
+  console.log(first_sudoku);
+}
+function can_you_put_a_1_pos2_0() {
+  console.log(first_sudoku);
+}
+function can_you_put_a_1_pos1_3() {
+  console.log(first_sudoku);
+}
+function can_you_put_a_1_pos1_2() {
+  console.log(first_sudoku);
+}
+function can_you_put_a_1_pos1_1() {
+  console.log(first_sudoku);
+}
+function can_you_put_a_1_pos1_0() {
+  console.log(first_sudoku);
+}
 function can_you_put_a_1_pos0_3() {
   console.log(first_sudoku);
 }
-
+//!put a Y in section
 function can_you_put_a_1_pos0_2() {
   console.log(first_sudoku); //! delete
   if (
-    first_sudoku[0][1].indexOf("1") != -1 ||
-    first_sudoku[0][1].indexOf("2") != -1 ||
-    first_sudoku[0][1].indexOf("3") != -1 ||
-    first_sudoku[0][1].indexOf("4") != -1
+    first_sudoku[0][2].indexOf("1") != -1 ||
+    first_sudoku[0][2].indexOf("2") != -1 ||
+    first_sudoku[0][2].indexOf("3") != -1 ||
+    first_sudoku[0][2].indexOf("4") != -1
   ) {
     console.log("1,2,3,4"); //! delete
     return can_you_put_a_1_pos0_3();
   } else if (
     first_sudoku[0].indexOf("1") == -1 &&
-    first_sudoku[1][1].indexOf("1") == -1 &&
-    first_sudoku[2][1].indexOf("1") == -1 &&
-    first_sudoku[3][1].indexOf("1") == -1
+    first_sudoku[1][2].indexOf("1") == -1 &&
+    first_sudoku[2][2].indexOf("1") == -1 &&
+    first_sudoku[3][2].indexOf("1") == -1
   ) {
     console.log("yes it can put a one here "); //! delete
+    first_sudoku[0][2] = "Y";
     return can_you_put_a_1_pos0_3();
   } else {
     console.log("no!!! it has a 1"); //! delete
