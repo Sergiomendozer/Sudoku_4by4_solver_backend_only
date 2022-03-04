@@ -106,6 +106,60 @@ function order_of_sudoku_numbers() {
 
 //TODO: no for loop need to call another section after
 //TODO: [0][0] should be function name
+function can_you_put_a_1_pos0_3() {
+  console.log(first_sudoku);
+}
+
+function can_you_put_a_1_pos0_2() {
+  console.log(first_sudoku); //! delete
+  if (
+    first_sudoku[0][1].indexOf("1") != -1 ||
+    first_sudoku[0][1].indexOf("2") != -1 ||
+    first_sudoku[0][1].indexOf("3") != -1 ||
+    first_sudoku[0][1].indexOf("4") != -1
+  ) {
+    console.log("1,2,3,4"); //! delete
+    return can_you_put_a_1_pos0_3();
+  } else if (
+    first_sudoku[0].indexOf("1") == -1 &&
+    first_sudoku[1][1].indexOf("1") == -1 &&
+    first_sudoku[2][1].indexOf("1") == -1 &&
+    first_sudoku[3][1].indexOf("1") == -1
+  ) {
+    console.log("yes it can put a one here "); //! delete
+    return can_you_put_a_1_pos0_3();
+  } else {
+    console.log("no!!! it has a 1"); //! delete
+    first_sudoku[0][1] = "N";
+    return can_you_put_a_1_pos0_3();
+  }
+}
+
+function can_you_put_a_1_pos0_1() {
+  console.log(first_sudoku); //! delete
+  if (
+    first_sudoku[0][1].indexOf("1") != -1 ||
+    first_sudoku[0][1].indexOf("2") != -1 ||
+    first_sudoku[0][1].indexOf("3") != -1 ||
+    first_sudoku[0][1].indexOf("4") != -1
+  ) {
+    console.log("1,2,3,4"); //! delete
+    return can_you_put_a_1_pos0_1();
+  } else if (
+    first_sudoku[0].indexOf("1") == -1 &&
+    first_sudoku[1][1].indexOf("1") == -1 &&
+    first_sudoku[2][1].indexOf("1") == -1 &&
+    first_sudoku[3][1].indexOf("1") == -1
+  ) {
+    console.log("yes it can put a one here "); //! delete
+    return can_you_put_a_1_pos0_2();
+  } else {
+    console.log("no!!! it has a 1"); //! delete
+    first_sudoku[0][1] = "N";
+    return can_you_put_a_1_pos0_2();
+  }
+}
+
 function can_you_put_a_1_pos0_0() {
   console.log(first_sudoku);
   if (
@@ -114,21 +168,20 @@ function can_you_put_a_1_pos0_0() {
     first_sudoku[0][0].indexOf("3") != -1 ||
     first_sudoku[0][0].indexOf("4") != -1
   ) {
-    console.log("1,2,3,4");
-    return; // call pos0_1 next
+    console.log("1,2,3,4"); //! delete
+    return can_you_put_a_1_pos0_1(); // call pos0_1 next
   } else if (
     first_sudoku[0].indexOf("1") == -1 &&
     first_sudoku[1][0].indexOf("1") == -1 &&
     first_sudoku[2][0].indexOf("1") == -1 &&
     first_sudoku[3][0].indexOf("1") == -1
   ) {
-    console.log("yes it can put a one here ");
-    // call pos0_1 next
+    console.log("yes it can put a one here "); //! delete
+    return can_you_put_a_1_pos0_1();
   } else {
-    console.log("no!!! it has a 1");
+    console.log("no!!! it has a 1"); //! delete
     first_sudoku[0][0] = "N";
-    console.log(first_sudoku);
-    //call pos0_1 next
+    return can_you_put_a_1_pos0_1();
   }
 }
 
