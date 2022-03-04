@@ -113,10 +113,18 @@ function replace_N_and_Y_with_N() {}
 function replace_Y_with_n() {
   // make sure this function is called
   console.log("111");
-  const countNs = (row) =>
-    row.reduce((acc, curr) => acc + (curr === "N" ? 1 : 0), 0);
-  // number of Ns in each row
-  console.log(first_sudoku.map(countNs));
+  const countYs = (row) =>
+    row.reduce((acc, curr) => acc + (curr === "Y" ? 1 : 0), 0);
+  // number of Ys in each row
+  var countsY = first_sudoku.map(countYs);
+  console.log(countsY); //!delete
+  var cols = ["column 1", "column 2", "column 3", "column 4"];
+  // zips files
+  var cols_counter_Y = cols.map(function (e, i) {
+    return [e, countsY[i]];
+  });
+
+  console.log(cols_counter_Y);
 }
 
 function can_you_put_n_in_pos3_3() {
