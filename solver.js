@@ -111,6 +111,7 @@ function replace_N_and_Y_with_N() {
   console.log(first_sudoku);
   //? loop to create
   //? if position == n or == y replace with "X"
+  //! make function if (cols_counter_Y[1][1]...[0][1]..[2][1]..[3][1] greater than 1 run pos0_0 again.
 }
 // make sure there is not more Y's and id there is call pos0_0
 
