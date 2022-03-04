@@ -109,7 +109,16 @@ function order_of_sudoku_numbers() {
 //TODO: [0][0] should be function name
 function replace_N_and_Y_with_N() {}
 // make sure there is not more Y's and id there is call pos0_0
-function replace_Y_with_n() {}
+
+function replace_Y_with_n() {
+  // make sure this function is called
+  console.log("111");
+  const countNs = (row) =>
+    row.reduce((acc, curr) => acc + (curr === "N" ? 1 : 0), 0);
+  // number of Ns in each row
+  console.log(first_sudoku.map(countNs));
+}
+
 function can_you_put_n_in_pos3_3() {
   console.log(first_sudoku);
   if (
@@ -119,6 +128,7 @@ function can_you_put_n_in_pos3_3() {
     first_sudoku[3][3].indexOf("4") != -1
   ) {
     console.log("1,2,3,4"); //! delete
+    return replace_Y_with_n();
     // return can_you_put_n_in_pos3_3();
   } else if (
     first_sudoku[3].indexOf(n) == -1 &&
@@ -128,10 +138,12 @@ function can_you_put_n_in_pos3_3() {
   ) {
     console.log("yes it can put a one here "); //! delete
     first_sudoku[3][3] = "Y";
+    return replace_Y_with_n();
     // return can_you_put_n_in_pos3_3();
   } else {
     console.log("no!!! it has a 1"); //! delete
     first_sudoku[3][3] = "N";
+    return replace_Y_with_n();
     // return can_you_put_n_in_pos3_3();
   }
 }
