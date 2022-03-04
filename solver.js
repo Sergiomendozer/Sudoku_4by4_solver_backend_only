@@ -107,7 +107,11 @@ function order_of_sudoku_numbers() {
 
 //TODO: no for loop need to call another section after
 //TODO: [0][0] should be function name
-function replace_N_and_Y_with_N() {}
+function replace_N_and_Y_with_N() {
+  console.log(first_sudoku);
+  //? loop to create
+  //? if position == n or == y replace with "X"
+}
 // make sure there is not more Y's and id there is call pos0_0
 
 function replace_Y_with_n() {
@@ -124,7 +128,24 @@ function replace_Y_with_n() {
     return [e, countsY[i]];
   });
 
-  console.log(cols_counter_Y);
+  console.log(cols_counter_Y); //!delete
+  if (cols_counter_Y[0][1] == 1) {
+    var placement = first_sudoku[0].indexOf("Y");
+    first_sudoku[0][placement] = n;
+    return replace_N_and_Y_with_N();
+  } else if (cols_counter_Y[1][1] == 1) {
+    var placement = first_sudoku[1].indexOf("Y");
+    first_sudoku[1][placement] = n;
+    return replace_N_and_Y_with_N();
+  } else if (cols_counter_Y[2][1] == 1) {
+    var placement = first_sudoku[2].indexOf("Y");
+    first_sudoku[2][placement] = n;
+    return replace_N_and_Y_with_N();
+  } else if (cols_counter_Y[3][1] == 1) {
+    var placement = first_sudoku[3].indexOf("Y");
+    first_sudoku[3][placement] = n;
+    return replace_N_and_Y_with_N();
+  }
 }
 
 function can_you_put_n_in_pos3_3() {
