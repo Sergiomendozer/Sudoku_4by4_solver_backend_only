@@ -272,9 +272,9 @@ function can_you_put_n_in_pos3_3() {
     // return can_you_put_n_in_pos3_3();
   } else if (
     first_sudoku[3].indexOf(n) == -1 &&
-    first_sudoku[3][3].indexOf(n) == -1 &&
-    first_sudoku[3][3].indexOf(n) == -1 &&
-    first_sudoku[3][3].indexOf(n) == -1
+    first_sudoku[0][3].indexOf(n) == -1 &&
+    first_sudoku[1][3].indexOf(n) == -1 &&
+    first_sudoku[2][3].indexOf(n) == -1
   ) {
     console.log("yes it can put a one here "); //! delete
     first_sudoku[3][3] = "Y";
@@ -299,9 +299,9 @@ function can_you_put_n_in_pos3_2() {
     return can_you_put_n_in_pos3_3();
   } else if (
     first_sudoku[3].indexOf(n) == -1 &&
-    first_sudoku[3][2].indexOf(n) == -1 &&
-    first_sudoku[3][2].indexOf(n) == -1 &&
-    first_sudoku[3][2].indexOf(n) == -1
+    first_sudoku[0][2].indexOf(n) == -1 &&
+    first_sudoku[1][2].indexOf(n) == -1 &&
+    first_sudoku[2][2].indexOf(n) == -1
   ) {
     console.log("yes it can put a one here "); //! delete
     first_sudoku[3][2] = "Y";
@@ -324,9 +324,9 @@ function can_you_put_n_in_pos3_1() {
     return can_you_put_n_in_pos3_2();
   } else if (
     first_sudoku[3].indexOf(n) == -1 &&
-    first_sudoku[3][1].indexOf(n) == -1 &&
-    first_sudoku[3][1].indexOf(n) == -1 &&
-    first_sudoku[3][1].indexOf(n) == -1
+    first_sudoku[0][1].indexOf(n) == -1 &&
+    first_sudoku[1][1].indexOf(n) == -1 &&
+    first_sudoku[2][1].indexOf(n) == -1
   ) {
     console.log("yes it can put a one here "); //! delete
     first_sudoku[3][1] = "Y";
@@ -349,9 +349,9 @@ function can_you_put_n_in_pos3_0() {
     return can_you_put_n_in_pos3_1();
   } else if (
     first_sudoku[3].indexOf(n) == -1 &&
-    first_sudoku[3][0].indexOf(n) == -1 &&
-    first_sudoku[3][0].indexOf(n) == -1 &&
-    first_sudoku[3][0].indexOf(n) == -1
+    first_sudoku[0][0].indexOf(n) == -1 &&
+    first_sudoku[1][0].indexOf(n) == -1 &&
+    first_sudoku[2][0].indexOf(n) == -1
   ) {
     console.log("yes it can put a one here "); //! delete
     first_sudoku[3][0] = "Y";
@@ -374,9 +374,9 @@ function can_you_put_n_in_pos2_3() {
     return can_you_put_n_in_pos3_0();
   } else if (
     first_sudoku[2].indexOf(n) == -1 &&
-    first_sudoku[2][3].indexOf(n) == -1 &&
-    first_sudoku[2][3].indexOf(n) == -1 &&
-    first_sudoku[2][3].indexOf(n) == -1
+    first_sudoku[3][3].indexOf(n) == -1 &&
+    first_sudoku[0][3].indexOf(n) == -1 &&
+    first_sudoku[1][3].indexOf(n) == -1
   ) {
     console.log("yes it can put a one here "); //! delete
     first_sudoku[2][3] = "Y";
@@ -399,9 +399,9 @@ function can_you_put_n_in_pos2_2() {
     return can_you_put_n_in_pos2_3();
   } else if (
     first_sudoku[2].indexOf(n) == -1 &&
-    first_sudoku[2][2].indexOf(n) == -1 &&
-    first_sudoku[2][2].indexOf(n) == -1 &&
-    first_sudoku[2][2].indexOf(n) == -1
+    first_sudoku[3][2].indexOf(n) == -1 &&
+    first_sudoku[0][2].indexOf(n) == -1 &&
+    first_sudoku[1][2].indexOf(n) == -1
   ) {
     console.log("yes it can put a one here "); //! delete
     first_sudoku[2][2] = "Y";
@@ -424,9 +424,9 @@ function can_you_put_n_in_pos2_1() {
     return can_you_put_n_in_pos2_2();
   } else if (
     first_sudoku[2].indexOf(n) == -1 &&
-    first_sudoku[2][1].indexOf(n) == -1 &&
-    first_sudoku[2][1].indexOf(n) == -1 &&
-    first_sudoku[2][1].indexOf(n) == -1
+    first_sudoku[3][1].indexOf(n) == -1 &&
+    first_sudoku[0][1].indexOf(n) == -1 &&
+    first_sudoku[1][1].indexOf(n) == -1
   ) {
     console.log("yes it can put a one here "); //! delete
     first_sudoku[2][1] = "Y";
@@ -449,9 +449,9 @@ function can_you_put_n_in_pos2_0() {
     return can_you_put_n_in_pos2_1();
   } else if (
     first_sudoku[2].indexOf(n) == -1 &&
-    first_sudoku[2][0].indexOf(n) == -1 &&
-    first_sudoku[2][0].indexOf(n) == -1 &&
-    first_sudoku[2][0].indexOf(n) == -1
+    first_sudoku[3][0].indexOf(n) == -1 &&
+    first_sudoku[0][0].indexOf(n) == -1 &&
+    first_sudoku[1][0].indexOf(n) == -1
   ) {
     console.log("yes it can put a one here "); //! delete
     first_sudoku[2][0] = "Y";
@@ -474,9 +474,9 @@ function can_you_put_n_in_pos1_3() {
     return can_you_put_n_in_pos2_0();
   } else if (
     first_sudoku[1].indexOf(n) == -1 &&
-    first_sudoku[1][3].indexOf(n) == -1 &&
-    first_sudoku[1][3].indexOf(n) == -1 &&
-    first_sudoku[1][3].indexOf(n) == -1
+    first_sudoku[2][3].indexOf(n) == -1 &&
+    first_sudoku[3][3].indexOf(n) == -1 &&
+    first_sudoku[0][3].indexOf(n) == -1
   ) {
     console.log("yes it can put a one here "); //! delete
     first_sudoku[1][3] = "Y";
@@ -499,9 +499,9 @@ function can_you_put_n_in_pos1_2() {
     return can_you_put_n_in_pos1_3();
   } else if (
     first_sudoku[1].indexOf(n) == -1 &&
-    first_sudoku[1][2].indexOf(n) == -1 &&
     first_sudoku[2][2].indexOf(n) == -1 &&
-    first_sudoku[3][2].indexOf(n) == -1
+    first_sudoku[3][2].indexOf(n) == -1 &&
+    first_sudoku[0][2].indexOf(n) == -1
   ) {
     console.log("yes it can put a one here "); //! delete
     first_sudoku[1][2] = "Y";
@@ -524,9 +524,9 @@ function can_you_put_n_in_pos1_1() {
     return can_you_put_n_in_pos1_2();
   } else if (
     first_sudoku[1].indexOf(n) == -1 &&
-    first_sudoku[1][1].indexOf(n) == -1 &&
     first_sudoku[2][1].indexOf(n) == -1 &&
-    first_sudoku[3][1].indexOf(n) == -1
+    first_sudoku[3][1].indexOf(n) == -1 &&
+    first_sudoku[0][1].indexOf(n) == -1
   ) {
     console.log("yes it can put a one here "); //! delete
     first_sudoku[1][1] = "Y";
@@ -549,9 +549,9 @@ function can_you_put_n_in_pos1_0() {
     return can_you_put_n_in_pos1_1();
   } else if (
     first_sudoku[1].indexOf(n) == -1 &&
-    first_sudoku[1][0].indexOf(n) == -1 &&
     first_sudoku[2][0].indexOf(n) == -1 &&
-    first_sudoku[3][0].indexOf(n) == -1
+    first_sudoku[3][0].indexOf(n) == -1 &&
+    first_sudoku[0][0].indexOf(n) == -1
   ) {
     console.log("yes it can put a one here "); //! delete
     first_sudoku[1][0] = "Y";
@@ -625,7 +625,7 @@ function can_you_put_n_in_pos0_1() {
     first_sudoku[0][1].indexOf("4") != -1
   ) {
     console.log("1,2,3,4"); //! delete
-    return can_you_put_n_in_pos0_1();
+    return can_you_put_n_in_pos0_2();
   } else if (
     first_sudoku[0].indexOf(n) == -1 &&
     first_sudoku[1][1].indexOf(n) == -1 &&
@@ -701,3 +701,4 @@ counter_3(first_sudoku, three, count_three);
 counter_4(first_sudoku, four, count_four);
 is_it_solved();
 // first_number_to_insert(); //! delete
+//! line 620 and 627
