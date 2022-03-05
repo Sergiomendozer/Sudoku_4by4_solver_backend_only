@@ -144,7 +144,8 @@ function order_of_sudoku_numbers() {
   sortable.sort(function (a, b) {
     return b[1] - a[1];
   });
-  return four_occurrences();
+  //   return four_occurrences(); //!delete
+  return which_number_to_insert();
 }
 
 function four_occurrences() {
@@ -669,18 +670,22 @@ function can_you_put_n_in_pos0_0() {
 
 // * highlighted bookmark
 // make second to insert
-function first_number_to_insert() {
+function which_number_to_insert() {
   if (sortable[0][0] == "one") {
     n = "1";
+    console.log("n=1"); //!delete
     return can_you_put_n_in_pos0_0(n);
   } else if (sortable[0][0] == "two") {
     n = "2";
+    console.log("n=2"); //!delete
     return can_you_put_n_in_pos0_0(n);
   } else if (sortable[0][0] == "three") {
     n = "3";
+    console.log("n=3"); //!delete
     return can_you_put_n_in_pos0_0(n);
   } else if (sortable[0][0] == "four") {
     n = "4";
+    console.log("n=4"); //!delete
     return can_you_put_n_in_pos0_0(n);
   }
 }
@@ -695,4 +700,4 @@ counter_2(first_sudoku, two, count_two);
 counter_3(first_sudoku, three, count_three);
 counter_4(first_sudoku, four, count_four);
 is_it_solved();
-first_number_to_insert();
+// first_number_to_insert(); //! delete
