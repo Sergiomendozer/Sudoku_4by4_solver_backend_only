@@ -30,3 +30,5 @@
 // else move onto next number = array has of order to go it
 //on last number fill in all positions that have X
 // solved
+
+//!! add function that checks if original sudoku input is correct
