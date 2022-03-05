@@ -107,21 +107,46 @@ function order_of_sudoku_numbers() {
 
 //TODO: no for loop need to call another section after
 //TODO: [0][0] should be function name
-// rename column 1
-function replace_N_and_Y_with_N() {
-  console.log("1232"); //!delete
-  //   var i = 0;
+// make sure there is not more Y's and id there is call pos0_0
+//? loop to create
+//? if position == N or == Y replace with "X"
+//! make function if (cols_counter_Y[1][1]...[0][1]..[2][1]..[3][1] greater than 1 run pos0_0 again.
+function do_we_use_same_n() {
+  console.log(first_sudoku);
+}
+function replace_N_or_Y_with_X_col_4() {
+  for (var i = 0; i < 4; i++) {
+    if (first_sudoku[3][i] == "N" || first_sudoku[3][i] == "Y") {
+      first_sudoku[3][i] = "X";
+    }
+  }
+  return do_we_use_same_n();
+}
+function replace_N_or_Y_with_X_col_3() {
+  for (var i = 0; i < 4; i++) {
+    if (first_sudoku[2][i] == "N" || first_sudoku[2][i] == "Y") {
+      first_sudoku[2][i] = "X";
+    }
+  }
+  return replace_N_or_Y_with_X_col_4();
+}
+function replace_N_or_Y_with_X_col_2() {
+  for (var i = 0; i < 4; i++) {
+    if (first_sudoku[1][i] == "N" || first_sudoku[1][i] == "Y") {
+      first_sudoku[1][i] = "X";
+    }
+  }
+  return replace_N_or_Y_with_X_col_3();
+}
+
+function replace_N_or_Y_with_X_col_1() {
   for (var i = 0; i < 4; i++) {
     if (first_sudoku[0][i] == "N" || first_sudoku[0][i] == "Y") {
       first_sudoku[0][i] = "X";
     }
-    console.log(first_sudoku);
   }
-  //? loop to create
-  //? if position == N or == Y replace with "X"
-  //! make function if (cols_counter_Y[1][1]...[0][1]..[2][1]..[3][1] greater than 1 run pos0_0 again.
+  return replace_N_or_Y_with_X_col_2();
 }
-// make sure there is not more Y's and id there is call pos0_0
 
 function replace_Y_with_n() {
   // make sure this function is called
@@ -141,19 +166,19 @@ function replace_Y_with_n() {
   if (cols_counter_Y[0][1] == 1) {
     var placement = first_sudoku[0].indexOf("Y");
     first_sudoku[0][placement] = n;
-    return replace_N_and_Y_with_N();
+    return replace_N_or_Y_with_X_col_1();
   } else if (cols_counter_Y[1][1] == 1) {
     var placement = first_sudoku[1].indexOf("Y");
     first_sudoku[1][placement] = n;
-    return replace_N_and_Y_with_N();
+    return replace_N_or_Y_with_X_col_1();
   } else if (cols_counter_Y[2][1] == 1) {
     var placement = first_sudoku[2].indexOf("Y");
     first_sudoku[2][placement] = n;
-    return replace_N_and_Y_with_N();
+    return replace_N_or_Y_with_X_col_1();
   } else if (cols_counter_Y[3][1] == 1) {
     var placement = first_sudoku[3].indexOf("Y");
     first_sudoku[3][placement] = n;
-    return replace_N_and_Y_with_N();
+    return replace_N_or_Y_with_X_col_1();
   }
 }
 
