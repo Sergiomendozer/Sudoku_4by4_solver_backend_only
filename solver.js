@@ -46,6 +46,7 @@ var count_three = 0;
 var count_four = 0;
 var n = "";
 var sortable = [];
+var cols_counter_Y = [];
 
 function counter_1(sudoku, sudoku_num, counter) {
   for (let i = 0; i < 4; i++) {
@@ -113,6 +114,7 @@ function order_of_sudoku_numbers() {
 //! make function if (cols_counter_Y[1][1]...[0][1]..[2][1]..[3][1] greater than 1 run pos0_0 again.
 function do_we_use_same_n() {
   console.log(first_sudoku);
+  console.log(cols_counter_Y);
 }
 function replace_N_or_Y_with_X_col_4() {
   for (var i = 0; i < 4; i++) {
@@ -158,7 +160,7 @@ function replace_Y_with_n() {
   console.log(countsY); //!delete
   var cols = ["column 1", "column 2", "column 3", "column 4"];
   // zips files
-  var cols_counter_Y = cols.map(function (e, i) {
+  cols_counter_Y = cols.map(function (e, i) {
     return [e, countsY[i]];
   });
 
