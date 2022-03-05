@@ -45,6 +45,7 @@ var count_two = 0;
 var count_three = 0;
 var count_four = 0;
 var n = "";
+var dict = {};
 var sortable = [];
 var cols_counter_Y = [];
 
@@ -88,7 +89,6 @@ function counter_4(sudoku, sudoku_num, counter) {
 }
 
 function order_of_sudoku_numbers() {
-  var dict = {};
   dict["one"] = count_one;
   dict["two"] = count_two;
   dict["three"] = count_three;
@@ -103,7 +103,6 @@ function order_of_sudoku_numbers() {
     return b[1] - a[1];
   });
   console.log(sortable);
-  //   console.log(sortable[0][0]);
 }
 
 //TODO: no for loop need to call another section after
@@ -127,12 +126,14 @@ function do_we_use_same_n() {
     count_two = 0;
     count_three = 0;
     count_four = 0;
+    dict = {};
+    sortable = [];
     counter_1(first_sudoku, one, count_one);
     counter_2(first_sudoku, two, count_two);
     counter_3(first_sudoku, three, count_three);
     counter_4(first_sudoku, four, count_four);
     console.log(first_sudoku);
-    // order_of_sudoku_numbers();
+    order_of_sudoku_numbers();
     // first_number_to_insert();
   }
 }
