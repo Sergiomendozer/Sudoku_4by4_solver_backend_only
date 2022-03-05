@@ -55,7 +55,7 @@ function counter_1(sudoku, sudoku_num, counter) {
     }
   }
   count_one = counter;
-  //   console.log(`one:${counter}`);
+  console.log(`one:${counter}`);
 }
 
 function counter_2(sudoku, sudoku_num, counter) {
@@ -65,7 +65,7 @@ function counter_2(sudoku, sudoku_num, counter) {
     }
   }
   count_two = counter;
-  //   console.log(`two:${counter}`);
+  console.log(`two:${counter}`);
 }
 
 function counter_3(sudoku, sudoku_num, counter) {
@@ -75,7 +75,7 @@ function counter_3(sudoku, sudoku_num, counter) {
     }
   }
   count_three = counter;
-  //   console.log(`three:${counter}`);
+  console.log(`three:${counter}`);
 }
 function counter_4(sudoku, sudoku_num, counter) {
   for (let i = 0; i < 4; i++) {
@@ -84,7 +84,7 @@ function counter_4(sudoku, sudoku_num, counter) {
     }
   }
   count_four = counter;
-  //   console.log(`four:${counter}`);
+  console.log(`four:${counter}`);
 }
 
 function order_of_sudoku_numbers() {
@@ -113,9 +113,30 @@ function order_of_sudoku_numbers() {
 //? if position == N or == Y replace with "X"
 //! make function if (cols_counter_Y[1][1]...[0][1]..[2][1]..[3][1] greater than 1 run pos0_0 again.
 function do_we_use_same_n() {
-  console.log(first_sudoku);
   console.log(cols_counter_Y);
+  if (
+    cols_counter_Y[0][1] >= 2 ||
+    cols_counter_Y[1][1] >= 2 ||
+    cols_counter_Y[2][1] >= 2 ||
+    cols_counter_Y[3][1] >= 2
+  ) {
+    return can_you_put_n_in_pos0_0(n);
+  } else {
+    console.log(first_sudoku);
+    count_one = 0;
+    count_two = 0;
+    count_three = 0;
+    count_four = 0;
+    counter_1(first_sudoku, one, count_one);
+    counter_2(first_sudoku, two, count_two);
+    counter_3(first_sudoku, three, count_three);
+    counter_4(first_sudoku, four, count_four);
+    console.log(first_sudoku);
+    // order_of_sudoku_numbers();
+    // first_number_to_insert();
+  }
 }
+
 function replace_N_or_Y_with_X_col_4() {
   for (var i = 0; i < 4; i++) {
     if (first_sudoku[3][i] == "N" || first_sudoku[3][i] == "Y") {
@@ -599,16 +620,15 @@ function first_number_to_insert() {
   if (sortable[0][0] == "one") {
     n = "1";
     return can_you_put_n_in_pos0_0(n);
-    // call function insert_1()
   } else if (sortable[0][0] == "two") {
     n = "2";
-    // call function insert_2()
+    return can_you_put_n_in_pos0_0(n);
   } else if (sortable[0][0] == "three") {
     n = "3";
-    // call function insert_3()
+    return can_you_put_n_in_pos0_0(n);
   } else if (sortable[0][0] == "four") {
     n = "4";
-    // call function insert_4()
+    return can_you_put_n_in_pos0_0(n);
   }
 }
 
