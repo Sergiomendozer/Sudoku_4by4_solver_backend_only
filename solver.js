@@ -92,7 +92,6 @@ function is_it_solved() {
   if (count_one == 4 && count_two == 4 && count_three == 4 && count_four == 4) {
     console.log("Detective Sudoku Solver has solved another table");
   } else {
-    // return order_of_sudoku_numbers();
     return checker_is_1_solved();
   }
 }
