@@ -88,6 +88,14 @@ function counter_4(sudoku, sudoku_num, counter) {
   console.log(`four:${counter}`);
 }
 
+function is_it_solved() {
+  if (count_one == 4 && count_two == 4 && count_three == 4 && count_four == 4) {
+    console.log("Detective Sudoku Solver has solved another table");
+  } else {
+    return order_of_sudoku_numbers();
+  }
+}
+
 function order_of_sudoku_numbers() {
   dict["one"] = count_one;
   dict["two"] = count_two;
@@ -102,7 +110,16 @@ function order_of_sudoku_numbers() {
   sortable.sort(function (a, b) {
     return b[1] - a[1];
   });
+  return four_occurrences();
+}
+
+function four_occurrences() {
+  //   console.log(sortable.split(0));
   console.log(sortable);
+
+  //   console.log(sortable[1][1]);
+  //   console.log(sortable[2][1]);
+  //   console.log(sortable[3][1]);
 }
 
 //TODO: no for loop need to call another section after
@@ -111,6 +128,7 @@ function order_of_sudoku_numbers() {
 //? loop to create
 //? if position == N or == Y replace with "X"
 //! make function if (cols_counter_Y[1][1]...[0][1]..[2][1]..[3][1] greater than 1 run pos0_0 again.
+// * highlighted bookmark
 function do_we_use_same_n() {
   console.log(cols_counter_Y);
   if (
@@ -133,7 +151,7 @@ function do_we_use_same_n() {
     counter_3(first_sudoku, three, count_three);
     counter_4(first_sudoku, four, count_four);
     console.log(first_sudoku);
-    order_of_sudoku_numbers();
+    is_it_solved();
     // first_number_to_insert();
   }
 }
@@ -642,5 +660,5 @@ counter_1(first_sudoku, one, count_one);
 counter_2(first_sudoku, two, count_two);
 counter_3(first_sudoku, three, count_three);
 counter_4(first_sudoku, four, count_four);
-order_of_sudoku_numbers();
+is_it_solved();
 first_number_to_insert();
