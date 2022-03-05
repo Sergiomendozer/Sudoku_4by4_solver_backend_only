@@ -92,7 +92,42 @@ function is_it_solved() {
   if (count_one == 4 && count_two == 4 && count_three == 4 && count_four == 4) {
     console.log("Detective Sudoku Solver has solved another table");
   } else {
+    // return order_of_sudoku_numbers();
+    return checker_is_1_solved();
+  }
+}
+
+// * highlighted bookmark
+function checker_is_4_solved() {
+  if (count_four == 4) {
+    count_four = -1;
     return order_of_sudoku_numbers();
+  } else {
+    return order_of_sudoku_numbers();
+  }
+}
+function checker_is_3_solved() {
+  if (count_three == 4) {
+    count_three = -1;
+    return checker_is_4_solved();
+  } else {
+    return checker_is_4_solved();
+  }
+}
+function checker_is_2_solved() {
+  if (count_two == 4) {
+    count_two = -1;
+    return checker_is_3_solved();
+  } else {
+    return checker_is_3_solved();
+  }
+}
+function checker_is_1_solved() {
+  if (count_one == 4) {
+    count_one = -1;
+    return checker_is_2_solved();
+  } else {
+    return checker_is_2_solved();
   }
 }
 
