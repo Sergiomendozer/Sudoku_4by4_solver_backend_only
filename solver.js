@@ -107,17 +107,25 @@ function order_of_sudoku_numbers() {
 
 //TODO: no for loop need to call another section after
 //TODO: [0][0] should be function name
+// rename column 1
 function replace_N_and_Y_with_N() {
-  console.log(first_sudoku);
+  console.log("1232"); //!delete
+  //   var i = 0;
+  for (var i = 0; i < 4; i++) {
+    if (first_sudoku[0][i] == "N" || first_sudoku[0][i] == "Y") {
+      first_sudoku[0][i] = "X";
+    }
+    console.log(first_sudoku);
+  }
   //? loop to create
-  //? if position == n or == y replace with "X"
+  //? if position == N or == Y replace with "X"
   //! make function if (cols_counter_Y[1][1]...[0][1]..[2][1]..[3][1] greater than 1 run pos0_0 again.
 }
 // make sure there is not more Y's and id there is call pos0_0
 
 function replace_Y_with_n() {
   // make sure this function is called
-  console.log("111");
+  console.log("111"); //!delete
   const countYs = (row) =>
     row.reduce((acc, curr) => acc + (curr === "Y" ? 1 : 0), 0);
   // number of Ys in each row
