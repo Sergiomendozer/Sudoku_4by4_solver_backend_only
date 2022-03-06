@@ -308,7 +308,7 @@ var sudoku_50 = [
   ["2", "X", "X", "4"],
 ];
 
-var sudoku = sudoku_50;
+var sudoku = sudoku_22;
 //18 is not a 29 lost
 // test not passed row/column does account4:
 //list = [4,5,9,12,15,16,32,35,40,42,43,44,45]
@@ -432,7 +432,7 @@ function order_of_sudoku_numbers() {
   return which_number_to_insert();
 }
 
-// * highlighted bookmark//
+// * highlighted bookmark// NEW
 function do_we_use_same_n() {
   console.log(cols_counter_Y);
   if (
@@ -442,6 +442,13 @@ function do_we_use_same_n() {
     cols_counter_Y[3][1] >= 2
   ) {
     return can_you_put_n_in_pos0_0(n);
+  } else if (
+    cols_counter_Y[0][1] == 2 ||
+    cols_counter_Y[1][1] == 2 ||
+    cols_counter_Y[2][1] == 2 ||
+    cols_counter_Y[3][1] == 2
+  ) {
+    console.log("new");
   } else {
     console.log(sudoku);
     count_one = 0;
@@ -494,7 +501,7 @@ function replace_N_or_Y_with_X_col_1() {
 }
 
 function replace_Y_with_n() {
-  console.log("111"); //!delete
+  console.log("replace_Y_with_n"); //!delete
   const countYs = (row) =>
     row.reduce((acc, curr) => acc + (curr === "Y" ? 1 : 0), 0);
   // number of Ys in each row
@@ -505,7 +512,6 @@ function replace_Y_with_n() {
   cols_counter_Y = cols.map(function (e, i) {
     return [e, countsY[i]];
   });
-
   console.log(cols_counter_Y); //!delete
   if (cols_counter_Y[0][1] == 1) {
     var placement = sudoku[0].indexOf("Y");
@@ -523,6 +529,18 @@ function replace_Y_with_n() {
     var placement = sudoku[3].indexOf("Y");
     sudoku[3][placement] = n;
     return replace_N_or_Y_with_X_col_1();
+  } else if (cols_counter_Y[0][1] > 1) {
+    console.log("more than 1 Y");
+    // return replace_N_or_Y_with_X_col_1();
+  } else if (cols_counter_Y[1][1] > 1) {
+    console.log("more than 1 Y");
+    // return replace_N_or_Y_with_X_col_1();
+  } else if (cols_counter_Y[2][1] > 1) {
+    console.log("more than 1 Y");
+    // return replace_N_or_Y_with_X_col_1();
+  } else if (cols_counter_Y[3][1] > 1) {
+    console.log("more than 1 Y");
+    // return replace_N_or_Y_with_X_col_1();
   }
 }
 
