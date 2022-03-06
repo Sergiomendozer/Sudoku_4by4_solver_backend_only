@@ -486,7 +486,7 @@ function alter_s_add_1(p) {
   console.log(sudoku);
 }
 //! look_here file has notes on how to complete
-// * highlighted bookmark
+// * highlighted bookmark for later right else for third solver
 function three_numbers_in_row_or_column() {
   console.log("three_numbers_in_row_or_column"); // !delete
   if (
