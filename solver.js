@@ -488,6 +488,7 @@ function alter_s_add_1(p) {
 //
 //! add not situation so it does not grab that row or column, look below
 //!add 1,2,4 situation
+//! make sure p = first placement[]
 function three_numbers_in_row_or_column() {
   console.log("three_numbers_in_row_or_column"); // !delete
   if (
@@ -506,7 +507,7 @@ function three_numbers_in_row_or_column() {
     sudoku[0].indexOf("3") >= 0
   ) {
     console.log("if"); // !delete
-    var p = 3;
+    var p = 0;
     return alter_s_add_3(p);
   } else if (
     sudoku[0].indexOf("2") != -1 &&
@@ -538,15 +539,17 @@ function three_numbers_in_row_or_column() {
   } else if (
     sudoku[1].indexOf("1") != -1 &&
     sudoku[1].indexOf("2") != -1 &&
-    sudoku[1].indexOf("4") != -1
+    sudoku[1].indexOf("4") != -1 &&
+    sudoku[1].indexOf("3") >= 0
   ) {
     console.log("if"); // !delete
-    var p = 3;
+    var p = 1;
     return alter_s_add_3(p);
   } else if (
     sudoku[1].indexOf("2") != -1 &&
     sudoku[1].indexOf("3") != -1 &&
-    sudoku[1].indexOf("4") != -1
+    sudoku[1].indexOf("4") != -1 &&
+    sudoku[1].indexOf("1") >= 0
   ) {
     console.log("if"); // !delete
     var p = 1;
@@ -554,23 +557,17 @@ function three_numbers_in_row_or_column() {
   } else if (
     sudoku[1].indexOf("1") != -1 &&
     sudoku[1].indexOf("3") != -1 &&
-    sudoku[1].indexOf("4") != -1
+    sudoku[1].indexOf("4") != -1 &&
+    sudoku[1].indexOf("2") >= 0
   ) {
     console.log("if"); // !delete
     var p = 1;
     return alter_s_add_2(p);
   } else if (
-    sudoku[1].indexOf("2") != -1 &&
-    sudoku[1].indexOf("3") != -1 &&
-    sudoku[1].indexOf("4") != -1
-  ) {
-    console.log("if"); // !delete
-    var p = 1;
-    return alter_s_add_1(p);
-  } else if (
     sudoku[2].indexOf("1") != -1 &&
     sudoku[2].indexOf("2") != -1 &&
-    sudoku[2].indexOf("3") != -1
+    sudoku[2].indexOf("3") != -1 &&
+    sudoku[2].indexOf("4") >= 0
   ) {
     console.log("if"); // !delete
     var p = 2;
@@ -578,39 +575,35 @@ function three_numbers_in_row_or_column() {
   } else if (
     sudoku[2].indexOf("1") != -1 &&
     sudoku[2].indexOf("2") != -1 &&
-    sudoku[2].indexOf("4") != -1
+    sudoku[2].indexOf("4") != -1 &&
+    sudoku[2].indexOf("3") >= 0
   ) {
     console.log("if"); // !delete
-    var p = 3;
+    var p = 2;
     return alter_s_add_3(p);
   } else if (
     sudoku[2].indexOf("2") != -1 &&
     sudoku[2].indexOf("3") != -1 &&
-    sudoku[2].indexOf("4") != -1
+    sudoku[2].indexOf("4") != -1 &&
+    sudoku[2].indexOf("1") >= 0
   ) {
     console.log("if"); // !delete
-    var p = 1;
+    var p = 2;
     return alter_s_add_1(p);
   } else if (
     sudoku[2].indexOf("1") != -1 &&
     sudoku[2].indexOf("3") != -1 &&
-    sudoku[2].indexOf("4") != -1
+    sudoku[2].indexOf("4") != -1 &&
+    sudoku[2].indexOf("2") >= 0
   ) {
     console.log("if"); // !delete
     var p = 2;
     return alter_s_add_3(p);
   } else if (
-    sudoku[2].indexOf("2") != -1 &&
-    sudoku[2].indexOf("3") != -1 &&
-    sudoku[2].indexOf("4") != -1
-  ) {
-    console.log("if"); // !delete
-    var p = 2;
-    return alter_s_add_1(p);
-  } else if (
     sudoku[3].indexOf("1") != -1 &&
     sudoku[3].indexOf("2") != -1 &&
-    sudoku[3].indexOf("3") != -1
+    sudoku[3].indexOf("3") != -1 &&
+    sudoku[3].indexOf("4") >= 0
   ) {
     console.log("if"); // !delete
     var p = 3;
@@ -618,7 +611,8 @@ function three_numbers_in_row_or_column() {
   } else if (
     sudoku[3].indexOf("1") != -1 &&
     sudoku[3].indexOf("2") != -1 &&
-    sudoku[3].indexOf("4") != -1
+    sudoku[3].indexOf("4") != -1 &&
+    sudoku[3].indexOf("3") >= 0
   ) {
     console.log("if"); // !delete
     var p = 3;
@@ -626,7 +620,8 @@ function three_numbers_in_row_or_column() {
   } else if (
     sudoku[3].indexOf("2") != -1 &&
     sudoku[3].indexOf("3") != -1 &&
-    sudoku[3].indexOf("4") != -1
+    sudoku[3].indexOf("4") != -1 &&
+    sudoku[3].indexOf("1") >= 0
   ) {
     console.log("if"); // !delete
     var p = 3;
@@ -634,19 +629,12 @@ function three_numbers_in_row_or_column() {
   } else if (
     sudoku[3].indexOf("1") != -1 &&
     sudoku[3].indexOf("3") != -1 &&
-    sudoku[3].indexOf("4") != -1
+    sudoku[3].indexOf("4") != -1 &&
+    sudoku[3].indexOf("2") >= 0
   ) {
     console.log("if"); // !delete
     var p = 3;
     return alter_s_add_2(p);
-  } else if (
-    sudoku[3].indexOf("1") != -1 &&
-    sudoku[3].indexOf("2") != -1 &&
-    sudoku[3].indexOf("4") != -1
-  ) {
-    console.log("if"); // !delete
-    var p = 3;
-    return alter_s_add_3(p);
   } else if (
     sudoku[0][0].indexOf("1") != -1 &&
     sudoku[1][0].indexOf("1") != -1 &&
