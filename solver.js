@@ -485,22 +485,34 @@ function alter_s_add_1(p) {
   sudoku[p][place] = "1";
   console.log(sudoku);
 }
-//! add not sitution so it does not grab that row or column
+//
+//! add not situation so it does not grab that row or column, look below
 //!add 1,2,4 situation
 function three_numbers_in_row_or_column() {
   console.log("three_numbers_in_row_or_column"); // !delete
   if (
     sudoku[0].indexOf("1") != -1 &&
     sudoku[0].indexOf("2") != -1 &&
-    sudoku[0].indexOf("3") != -1
+    sudoku[0].indexOf("3") != -1 &&
+    sudoku[0].indexOf("4") >= 0
   ) {
     console.log("if"); // !delete
     var p = 0;
     return alter_s_add_4(p);
   } else if (
+    sudoku[0].indexOf("1") != -1 &&
+    sudoku[0].indexOf("2") != -1 &&
+    sudoku[0].indexOf("4") != -1 &&
+    sudoku[0].indexOf("3") >= 0
+  ) {
+    console.log("if"); // !delete
+    var p = 3;
+    return alter_s_add_3(p);
+  } else if (
     sudoku[0].indexOf("2") != -1 &&
     sudoku[0].indexOf("3") != -1 &&
-    sudoku[0].indexOf("4") != -1
+    sudoku[0].indexOf("4") != -1 &&
+    sudoku[0].indexOf("1") >= 0
   ) {
     console.log("if"); // !delete
     var p = 0;
@@ -508,27 +520,29 @@ function three_numbers_in_row_or_column() {
   } else if (
     sudoku[0].indexOf("1") != -1 &&
     sudoku[0].indexOf("3") != -1 &&
-    sudoku[0].indexOf("4") != -1
+    sudoku[0].indexOf("4") != -1 &&
+    sudoku[0].indexOf("2") >= 0
   ) {
     console.log("if"); // !delete
     var p = 0;
     return alter_s_add_2(p);
   } else if (
-    sudoku[0].indexOf("2") != -1 &&
-    sudoku[0].indexOf("3") != -1 &&
-    sudoku[0].indexOf("4") != -1
-  ) {
-    console.log("if"); // !delete
-    var p = 0;
-    return alter_s_add_1(p);
-  } else if (
     sudoku[1].indexOf("1") != -1 &&
     sudoku[1].indexOf("2") != -1 &&
-    sudoku[1].indexOf("3") != -1
+    sudoku[1].indexOf("3") != -1 &&
+    sudoku[1].indexOf("4") >= 0
   ) {
     console.log("if"); // !delete
     var p = 1;
     return alter_s_add_4(p);
+  } else if (
+    sudoku[1].indexOf("1") != -1 &&
+    sudoku[1].indexOf("2") != -1 &&
+    sudoku[1].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 3;
+    return alter_s_add_3(p);
   } else if (
     sudoku[1].indexOf("2") != -1 &&
     sudoku[1].indexOf("3") != -1 &&
@@ -562,6 +576,14 @@ function three_numbers_in_row_or_column() {
     var p = 2;
     return alter_s_add_4(p);
   } else if (
+    sudoku[2].indexOf("1") != -1 &&
+    sudoku[2].indexOf("2") != -1 &&
+    sudoku[2].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 3;
+    return alter_s_add_3(p);
+  } else if (
     sudoku[2].indexOf("2") != -1 &&
     sudoku[2].indexOf("3") != -1 &&
     sudoku[2].indexOf("4") != -1
@@ -594,6 +616,14 @@ function three_numbers_in_row_or_column() {
     var p = 3;
     return alter_s_add_4(p);
   } else if (
+    sudoku[3].indexOf("1") != -1 &&
+    sudoku[3].indexOf("2") != -1 &&
+    sudoku[3].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 3;
+    return alter_s_add_3(p);
+  } else if (
     sudoku[3].indexOf("2") != -1 &&
     sudoku[3].indexOf("3") != -1 &&
     sudoku[3].indexOf("4") != -1
@@ -619,38 +649,242 @@ function three_numbers_in_row_or_column() {
     return alter_s_add_3(p);
   } else if (
     sudoku[0][0].indexOf("1") != -1 &&
-    sudoku[0][0].indexOf("1") != -1 &&
-    sudoku[0][0].indexOf("1") != -1 &&
+    sudoku[1][0].indexOf("1") != -1 &&
+    sudoku[2][0].indexOf("1") != -1 &&
+    sudoku[3][0].indexOf("1") != -1 &&
     sudoku[0][0].indexOf("2") != -1 &&
-    sudoku[0][0].indexOf("2") != -1 &&
-    sudoku[0][0].indexOf("2") != -1 &&
+    sudoku[1][0].indexOf("2") != -1 &&
+    sudoku[2][0].indexOf("2") != -1 &&
+    sudoku[3][0].indexOf("2") != -1 &&
     sudoku[0][0].indexOf("3") != -1 &&
-    sudoku[0][0].indexOf("3") != -1 &&
-    sudoku[0][0].indexOf("3") != -1
-  ) {
-    console.log("if row"); // !delete
-  } else if (
-    sudoku[0][0].indexOf("2") != -1 &&
-    sudoku[0][0].indexOf("2") != -1 &&
-    sudoku[0][0].indexOf("2") != -1 &&
-    sudoku[0][0].indexOf("3") != -1 &&
-    sudoku[0][0].indexOf("3") != -1 &&
-    sudoku[0][0].indexOf("3") != -1 &&
-    sudoku[0][0].indexOf("4") != -1 &&
-    sudoku[0][0].indexOf("4") != -1 &&
-    sudoku[0][0].indexOf("4") != -1
+    sudoku[1][0].indexOf("3") != -1 &&
+    sudoku[2][0].indexOf("3") != -1 &&
+    sudoku[3][0].indexOf("3") != -1
   ) {
     console.log("if row"); // !delete
   } else if (
     sudoku[0][0].indexOf("1") != -1 &&
-    sudoku[0][0].indexOf("1") != -1 &&
-    sudoku[0][0].indexOf("1") != -1 &&
+    sudoku[1][0].indexOf("1") != -1 &&
+    sudoku[2][0].indexOf("1") != -1 &&
+    sudoku[3][0].indexOf("1") != -1 &&
+    sudoku[0][0].indexOf("2") != -1 &&
+    sudoku[1][0].indexOf("2") != -1 &&
+    sudoku[2][0].indexOf("2") != -1 &&
+    sudoku[3][0].indexOf("2") != -1 &&
     sudoku[0][0].indexOf("4") != -1 &&
-    sudoku[0][0].indexOf("4") != -1 &&
-    sudoku[0][0].indexOf("4") != -1 &&
+    sudoku[1][0].indexOf("4") != -1 &&
+    sudoku[2][0].indexOf("4") != -1 &&
+    sudoku[3][0].indexOf("4") != -1
+  ) {
+    console.log("if row"); // !delete
+  } else if (
     sudoku[0][0].indexOf("3") != -1 &&
+    sudoku[1][0].indexOf("3") != -1 &&
+    sudoku[2][0].indexOf("3") != -1 &&
+    sudoku[3][0].indexOf("3") != -1 &&
+    sudoku[0][0].indexOf("2") != -1 &&
+    sudoku[1][0].indexOf("2") != -1 &&
+    sudoku[2][0].indexOf("2") != -1 &&
+    sudoku[3][0].indexOf("2") != -1 &&
+    sudoku[0][0].indexOf("4") != -1 &&
+    sudoku[1][0].indexOf("4") != -1 &&
+    sudoku[2][0].indexOf("4") != -1 &&
+    sudoku[3][0].indexOf("4") != -1
+  ) {
+    console.log("if row"); // !delete, 143
+  } else if (
     sudoku[0][0].indexOf("3") != -1 &&
-    sudoku[0][0].indexOf("3") != -1
+    sudoku[1][0].indexOf("3") != -1 &&
+    sudoku[2][0].indexOf("3") != -1 &&
+    sudoku[3][0].indexOf("3") != -1 &&
+    sudoku[0][0].indexOf("1") != -1 &&
+    sudoku[1][0].indexOf("1") != -1 &&
+    sudoku[2][0].indexOf("1") != -1 &&
+    sudoku[3][0].indexOf("1") != -1 &&
+    sudoku[0][0].indexOf("4") != -1 &&
+    sudoku[1][0].indexOf("4") != -1 &&
+    sudoku[2][0].indexOf("4") != -1 &&
+    sudoku[3][0].indexOf("4") != -1
+  ) {
+    console.log("if row"); // !delete
+  } else if (
+    sudoku[0][1].indexOf("1") != -1 &&
+    sudoku[1][1].indexOf("1") != -1 &&
+    sudoku[2][1].indexOf("1") != -1 &&
+    sudoku[3][1].indexOf("1") != -1 &&
+    sudoku[0][1].indexOf("2") != -1 &&
+    sudoku[1][1].indexOf("2") != -1 &&
+    sudoku[2][1].indexOf("2") != -1 &&
+    sudoku[3][1].indexOf("2") != -1 &&
+    sudoku[0][1].indexOf("3") != -1 &&
+    sudoku[1][1].indexOf("3") != -1 &&
+    sudoku[2][1].indexOf("3") != -1 &&
+    sudoku[3][1].indexOf("3") != -1
+  ) {
+    console.log("if row"); // !delete
+  } else if (
+    sudoku[0][1].indexOf("1") != -1 &&
+    sudoku[1][1].indexOf("1") != -1 &&
+    sudoku[2][1].indexOf("1") != -1 &&
+    sudoku[3][1].indexOf("1") != -1 &&
+    sudoku[0][1].indexOf("2") != -1 &&
+    sudoku[1][1].indexOf("2") != -1 &&
+    sudoku[2][1].indexOf("2") != -1 &&
+    sudoku[3][1].indexOf("2") != -1 &&
+    sudoku[0][1].indexOf("4") != -1 &&
+    sudoku[1][1].indexOf("4") != -1 &&
+    sudoku[2][1].indexOf("4") != -1 &&
+    sudoku[3][1].indexOf("4") != -1
+  ) {
+    console.log("if row"); // !delete
+  } else if (
+    sudoku[0][1].indexOf("3") != -1 &&
+    sudoku[1][1].indexOf("3") != -1 &&
+    sudoku[2][1].indexOf("3") != -1 &&
+    sudoku[3][1].indexOf("3") != -1 &&
+    sudoku[0][1].indexOf("2") != -1 &&
+    sudoku[1][1].indexOf("2") != -1 &&
+    sudoku[2][1].indexOf("2") != -1 &&
+    sudoku[3][1].indexOf("2") != -1 &&
+    sudoku[0][1].indexOf("4") != -1 &&
+    sudoku[1][1].indexOf("4") != -1 &&
+    sudoku[2][1].indexOf("4") != -1 &&
+    sudoku[3][1].indexOf("4") != -1
+  ) {
+    console.log("if row"); // !delete
+  } else if (
+    sudoku[0][1].indexOf("3") != -1 &&
+    sudoku[1][1].indexOf("3") != -1 &&
+    sudoku[2][1].indexOf("3") != -1 &&
+    sudoku[3][1].indexOf("3") != -1 &&
+    sudoku[0][1].indexOf("1") != -1 &&
+    sudoku[1][1].indexOf("1") != -1 &&
+    sudoku[2][1].indexOf("1") != -1 &&
+    sudoku[3][1].indexOf("1") != -1 &&
+    sudoku[0][1].indexOf("4") != -1 &&
+    sudoku[1][1].indexOf("4") != -1 &&
+    sudoku[2][1].indexOf("4") != -1 &&
+    sudoku[3][1].indexOf("4") != -1
+  ) {
+    console.log("if row"); // !delete
+  } else if (
+    sudoku[0][2].indexOf("1") != -1 &&
+    sudoku[1][2].indexOf("1") != -1 &&
+    sudoku[2][2].indexOf("1") != -1 &&
+    sudoku[3][2].indexOf("1") != -1 &&
+    sudoku[0][2].indexOf("2") != -1 &&
+    sudoku[1][2].indexOf("2") != -1 &&
+    sudoku[2][2].indexOf("2") != -1 &&
+    sudoku[3][2].indexOf("2") != -1 &&
+    sudoku[0][2].indexOf("3") != -1 &&
+    sudoku[1][2].indexOf("3") != -1 &&
+    sudoku[2][2].indexOf("3") != -1 &&
+    sudoku[3][2].indexOf("3") != -1
+  ) {
+    console.log("if row"); // !delete
+  } else if (
+    sudoku[0][2].indexOf("1") != -1 &&
+    sudoku[1][2].indexOf("1") != -1 &&
+    sudoku[2][2].indexOf("1") != -1 &&
+    sudoku[3][2].indexOf("1") != -1 &&
+    sudoku[0][2].indexOf("2") != -1 &&
+    sudoku[1][2].indexOf("2") != -1 &&
+    sudoku[2][2].indexOf("2") != -1 &&
+    sudoku[3][2].indexOf("2") != -1 &&
+    sudoku[0][2].indexOf("4") != -1 &&
+    sudoku[1][2].indexOf("4") != -1 &&
+    sudoku[2][2].indexOf("4") != -1 &&
+    sudoku[3][2].indexOf("4") != -1
+  ) {
+    console.log("if row"); // !delete
+  } else if (
+    sudoku[0][2].indexOf("3") != -1 &&
+    sudoku[1][2].indexOf("3") != -1 &&
+    sudoku[2][2].indexOf("3") != -1 &&
+    sudoku[3][2].indexOf("3") != -1 &&
+    sudoku[0][2].indexOf("2") != -1 &&
+    sudoku[1][2].indexOf("2") != -1 &&
+    sudoku[2][2].indexOf("2") != -1 &&
+    sudoku[3][2].indexOf("2") != -1 &&
+    sudoku[0][2].indexOf("4") != -1 &&
+    sudoku[1][2].indexOf("4") != -1 &&
+    sudoku[2][2].indexOf("4") != -1 &&
+    sudoku[3][2].indexOf("4") != -1
+  ) {
+    console.log("if row"); // !delete
+  } else if (
+    sudoku[0][2].indexOf("3") != -1 &&
+    sudoku[1][2].indexOf("3") != -1 &&
+    sudoku[2][2].indexOf("3") != -1 &&
+    sudoku[3][2].indexOf("3") != -1 &&
+    sudoku[0][2].indexOf("1") != -1 &&
+    sudoku[1][2].indexOf("1") != -1 &&
+    sudoku[2][2].indexOf("1") != -1 &&
+    sudoku[3][2].indexOf("1") != -1 &&
+    sudoku[0][2].indexOf("4") != -1 &&
+    sudoku[1][2].indexOf("4") != -1 &&
+    sudoku[2][2].indexOf("4") != -1 &&
+    sudoku[3][2].indexOf("4") != -1
+  ) {
+    console.log("if row"); // !delete, 2 to 3
+  } else if (
+    sudoku[0][3].indexOf("1") != -1 &&
+    sudoku[1][3].indexOf("1") != -1 &&
+    sudoku[2][3].indexOf("1") != -1 &&
+    sudoku[3][3].indexOf("1") != -1 &&
+    sudoku[0][3].indexOf("2") != -1 &&
+    sudoku[1][3].indexOf("2") != -1 &&
+    sudoku[2][3].indexOf("2") != -1 &&
+    sudoku[3][3].indexOf("2") != -1 &&
+    sudoku[0][3].indexOf("3") != -1 &&
+    sudoku[1][3].indexOf("3") != -1 &&
+    sudoku[2][3].indexOf("3") != -1 &&
+    sudoku[3][3].indexOf("3") != -1
+  ) {
+    console.log("if row"); // !delete
+  } else if (
+    sudoku[0][3].indexOf("1") != -1 &&
+    sudoku[1][3].indexOf("1") != -1 &&
+    sudoku[2][3].indexOf("1") != -1 &&
+    sudoku[3][3].indexOf("1") != -1 &&
+    sudoku[0][3].indexOf("2") != -1 &&
+    sudoku[1][3].indexOf("2") != -1 &&
+    sudoku[2][3].indexOf("2") != -1 &&
+    sudoku[3][3].indexOf("2") != -1 &&
+    sudoku[0][3].indexOf("4") != -1 &&
+    sudoku[1][3].indexOf("4") != -1 &&
+    sudoku[2][3].indexOf("4") != -1 &&
+    sudoku[3][3].indexOf("4") != -1
+  ) {
+    console.log("if row"); // !delete
+  } else if (
+    sudoku[0][3].indexOf("3") != -1 &&
+    sudoku[1][3].indexOf("3") != -1 &&
+    sudoku[2][3].indexOf("3") != -1 &&
+    sudoku[3][3].indexOf("3") != -1 &&
+    sudoku[0][3].indexOf("2") != -1 &&
+    sudoku[1][3].indexOf("2") != -1 &&
+    sudoku[2][3].indexOf("2") != -1 &&
+    sudoku[3][3].indexOf("2") != -1 &&
+    sudoku[0][3].indexOf("4") != -1 &&
+    sudoku[1][3].indexOf("4") != -1 &&
+    sudoku[2][3].indexOf("4") != -1 &&
+    sudoku[3][3].indexOf("4") != -1
+  ) {
+    console.log("if row"); // !delete
+  } else if (
+    sudoku[0][3].indexOf("3") != -1 &&
+    sudoku[1][3].indexOf("3") != -1 &&
+    sudoku[2][3].indexOf("3") != -1 &&
+    sudoku[3][3].indexOf("3") != -1 &&
+    sudoku[0][3].indexOf("1") != -1 &&
+    sudoku[1][3].indexOf("1") != -1 &&
+    sudoku[2][3].indexOf("1") != -1 &&
+    sudoku[3][3].indexOf("1") != -1 &&
+    sudoku[0][3].indexOf("4") != -1 &&
+    sudoku[1][3].indexOf("4") != -1 &&
+    sudoku[2][3].indexOf("4") != -1 &&
+    sudoku[3][3].indexOf("4") != -1
   ) {
     console.log("if row"); // !delete
   }
