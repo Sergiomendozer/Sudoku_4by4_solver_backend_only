@@ -1,8 +1,3 @@
-// DOM Manipulation: Selecting & changing website elements
-// var unicycle = document.getElementsByClassName("unicycle");
-// var paragraphs = document.getElementsByTagName("p");
-// var queryUnicycle = document.querySelector(".unicycle");
-// var queryAll = document.querySelectorAll(".unicycle, #div2");
 var div1 = document.getElementById("div1");
 var text = "<h1>Hello World</h1>";
 document.getElementById("div1").innerHTML = text;
@@ -434,26 +429,10 @@ function order_of_sudoku_numbers() {
   sortable.sort(function (a, b) {
     return b[1] - a[1];
   });
-  //   return four_occurrences(); //!delete
   return which_number_to_insert();
 }
 
-function four_occurrences() {
-  //   console.log(sortable.split(0));
-  console.log(sortable);
-
-  //   console.log(sortable[1][1]);
-  //   console.log(sortable[2][1]);
-  //   console.log(sortable[3][1]);
-}
-
-//TODO: no for loop need to call another section after
-//TODO: [0][0] should be function name
-// make sure there is not more Y's and id there is call pos0_0
-//? loop to create
-//? if position == N or == Y replace with "X"
-//! make function if (cols_counter_Y[1][1]...[0][1]..[2][1]..[3][1] greater than 1 run pos0_0 again.
-// * highlighted bookmark
+// * highlighted bookmark//
 function do_we_use_same_n() {
   console.log(cols_counter_Y);
   if (
@@ -477,7 +456,6 @@ function do_we_use_same_n() {
     counter_4(sudoku, four, count_four);
     console.log(sudoku);
     is_it_solved();
-    // first_number_to_insert();
   }
 }
 
@@ -516,7 +494,6 @@ function replace_N_or_Y_with_X_col_1() {
 }
 
 function replace_Y_with_n() {
-  // make sure this function is called
   console.log("111"); //!delete
   const countYs = (row) =>
     row.reduce((acc, curr) => acc + (curr === "Y" ? 1 : 0), 0);
@@ -878,8 +855,6 @@ function can_you_put_n_in_pos0_3() {
     return can_you_put_n_in_pos1_0();
   }
 }
-
-//!put a Y in section
 function can_you_put_n_in_pos0_2() {
   console.log(sudoku); //! delete
   if (
@@ -959,7 +934,6 @@ function can_you_put_n_in_pos0_0() {
 }
 
 // * highlighted bookmark
-// make second to insert
 function which_number_to_insert() {
   if (sortable[0][0] == "one") {
     n = "1";
@@ -990,5 +964,3 @@ counter_2(sudoku, two, count_two);
 counter_3(sudoku, three, count_three);
 counter_4(sudoku, four, count_four);
 is_it_solved();
-// first_number_to_insert(); //! delete
-//! line 620 and 627
