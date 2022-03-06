@@ -308,7 +308,7 @@ var sudoku_50 = [
   ["2", "X", "X", "4"],
 ];
 
-var sudoku = sudoku_22;
+var sudoku = sudoku_4;
 //18 is not a 29 lost
 // test not passed row/column does account4:
 //list = [4,5,9,12,15,16,32,35,40,42,43,44,45]
@@ -465,6 +465,196 @@ function do_we_use_same_n() {
     is_it_solved();
   }
 }
+function alter_s_add_4(p) {
+  var place = sudoku[p].indexOf("X");
+  sudoku[p][place] = "4";
+  console.log(sudoku);
+}
+function alter_s_add_2(p) {
+  var place = sudoku[p].indexOf("X");
+  sudoku[p][place] = "2";
+  console.log(sudoku);
+}
+function alter_s_add_3(p) {
+  var place = sudoku[p].indexOf("X");
+  sudoku[p][place] = "3";
+  console.log(sudoku);
+}
+function alter_s_add_1(p) {
+  var place = sudoku[p].indexOf("X");
+  sudoku[p][place] = "1";
+  console.log(sudoku);
+}
+//! add not sitution so it does not grab that row or column
+//!add 1,2,4 situation
+function three_numbers_in_row_or_column() {
+  console.log("three_numbers_in_row_or_column"); // !delete
+  if (
+    sudoku[0].indexOf("1") != -1 &&
+    sudoku[0].indexOf("2") != -1 &&
+    sudoku[0].indexOf("3") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 0;
+    return alter_s_add_4(p);
+  } else if (
+    sudoku[0].indexOf("2") != -1 &&
+    sudoku[0].indexOf("3") != -1 &&
+    sudoku[0].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 0;
+    return alter_s_add_1(p);
+  } else if (
+    sudoku[0].indexOf("1") != -1 &&
+    sudoku[0].indexOf("3") != -1 &&
+    sudoku[0].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 0;
+    return alter_s_add_2(p);
+  } else if (
+    sudoku[0].indexOf("2") != -1 &&
+    sudoku[0].indexOf("3") != -1 &&
+    sudoku[0].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 0;
+    return alter_s_add_1(p);
+  } else if (
+    sudoku[1].indexOf("1") != -1 &&
+    sudoku[1].indexOf("2") != -1 &&
+    sudoku[1].indexOf("3") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 1;
+    return alter_s_add_4(p);
+  } else if (
+    sudoku[1].indexOf("2") != -1 &&
+    sudoku[1].indexOf("3") != -1 &&
+    sudoku[1].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 1;
+    return alter_s_add_1(p);
+  } else if (
+    sudoku[1].indexOf("1") != -1 &&
+    sudoku[1].indexOf("3") != -1 &&
+    sudoku[1].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 1;
+    return alter_s_add_2(p);
+  } else if (
+    sudoku[1].indexOf("2") != -1 &&
+    sudoku[1].indexOf("3") != -1 &&
+    sudoku[1].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 1;
+    return alter_s_add_1(p);
+  } else if (
+    sudoku[2].indexOf("1") != -1 &&
+    sudoku[2].indexOf("2") != -1 &&
+    sudoku[2].indexOf("3") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 2;
+    return alter_s_add_4(p);
+  } else if (
+    sudoku[2].indexOf("2") != -1 &&
+    sudoku[2].indexOf("3") != -1 &&
+    sudoku[2].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 1;
+    return alter_s_add_1(p);
+  } else if (
+    sudoku[2].indexOf("1") != -1 &&
+    sudoku[2].indexOf("3") != -1 &&
+    sudoku[2].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 2;
+    return alter_s_add_3(p);
+  } else if (
+    sudoku[2].indexOf("2") != -1 &&
+    sudoku[2].indexOf("3") != -1 &&
+    sudoku[2].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 2;
+    return alter_s_add_1(p);
+  } else if (
+    sudoku[3].indexOf("1") != -1 &&
+    sudoku[3].indexOf("2") != -1 &&
+    sudoku[3].indexOf("3") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 3;
+    return alter_s_add_4(p);
+  } else if (
+    sudoku[3].indexOf("2") != -1 &&
+    sudoku[3].indexOf("3") != -1 &&
+    sudoku[3].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 3;
+    return alter_s_add_1(p);
+  } else if (
+    sudoku[3].indexOf("1") != -1 &&
+    sudoku[3].indexOf("3") != -1 &&
+    sudoku[3].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 3;
+    return alter_s_add_2(p);
+  } else if (
+    sudoku[3].indexOf("1") != -1 &&
+    sudoku[3].indexOf("2") != -1 &&
+    sudoku[3].indexOf("4") != -1
+  ) {
+    console.log("if"); // !delete
+    var p = 3;
+    return alter_s_add_3(p);
+  } else if (
+    sudoku[0][0].indexOf("1") != -1 &&
+    sudoku[0][0].indexOf("1") != -1 &&
+    sudoku[0][0].indexOf("1") != -1 &&
+    sudoku[0][0].indexOf("2") != -1 &&
+    sudoku[0][0].indexOf("2") != -1 &&
+    sudoku[0][0].indexOf("2") != -1 &&
+    sudoku[0][0].indexOf("3") != -1 &&
+    sudoku[0][0].indexOf("3") != -1 &&
+    sudoku[0][0].indexOf("3") != -1
+  ) {
+    console.log("if row"); // !delete
+  } else if (
+    sudoku[0][0].indexOf("2") != -1 &&
+    sudoku[0][0].indexOf("2") != -1 &&
+    sudoku[0][0].indexOf("2") != -1 &&
+    sudoku[0][0].indexOf("3") != -1 &&
+    sudoku[0][0].indexOf("3") != -1 &&
+    sudoku[0][0].indexOf("3") != -1 &&
+    sudoku[0][0].indexOf("4") != -1 &&
+    sudoku[0][0].indexOf("4") != -1 &&
+    sudoku[0][0].indexOf("4") != -1
+  ) {
+    console.log("if row"); // !delete
+  } else if (
+    sudoku[0][0].indexOf("1") != -1 &&
+    sudoku[0][0].indexOf("1") != -1 &&
+    sudoku[0][0].indexOf("1") != -1 &&
+    sudoku[0][0].indexOf("4") != -1 &&
+    sudoku[0][0].indexOf("4") != -1 &&
+    sudoku[0][0].indexOf("4") != -1 &&
+    sudoku[0][0].indexOf("3") != -1 &&
+    sudoku[0][0].indexOf("3") != -1 &&
+    sudoku[0][0].indexOf("3") != -1
+  ) {
+    console.log("if row"); // !delete
+  }
+}
 function replace_N_or_Y_with_X_col_4_alter_solve() {
   for (var i = 0; i < 4; i++) {
     if (sudoku[3][i] == "N" || sudoku[3][i] == "Y") {
@@ -473,7 +663,8 @@ function replace_N_or_Y_with_X_col_4_alter_solve() {
   }
   console.log("alter-replace n nd y"); // !delete
   console.log(sudoku);
-  // return do_we_use_same_n(); used for later
+  return three_numbers_in_row_or_column();
+  //   return do_we_use_same_n(); used for later
 }
 function replace_N_or_Y_with_X_col_3_alter_solve() {
   for (var i = 0; i < 4; i++) {
