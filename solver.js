@@ -451,7 +451,7 @@ function order_of_sudoku_numbers() {
 // * highlighted bookmark//
 function do_we_use_same_n() {
   console.log("function do_we_use_same_n");
-  console.log(cols_counter_Y);
+  console.table(cols_counter_Y);
   if (
     cols_counter_Y[0][1] >= 2 ||
     cols_counter_Y[1][1] >= 2 ||
@@ -966,7 +966,7 @@ function replace_Y_with_n() {
   cols_counter_Y = cols.map(function (e, i) {
     return [e, countsY[i]];
   });
-  console.log(cols_counter_Y); //!delete
+  console.table(cols_counter_Y); //!delete
   if (cols_counter_Y[0][1] == 1) {
     var placement = sudoku[0].indexOf("Y");
     sudoku[0][placement] = n;
