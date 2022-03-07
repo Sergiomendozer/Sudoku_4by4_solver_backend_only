@@ -333,6 +333,10 @@ var n = "";
 var dict = {};
 var sortable = [];
 var cols_counter_Y = [];
+var row0 = [];
+var row1 = [];
+var row2 = [];
+var row3 = [];
 
 function counter_1(sudoku, sudoku_num, counter) {
   for (let i = 0; i < 4; i++) {
@@ -432,7 +436,7 @@ function order_of_sudoku_numbers() {
   return which_number_to_insert();
 }
 
-// * highlighted bookmark// NEW
+// * highlighted bookmark//
 function do_we_use_same_n() {
   console.log(cols_counter_Y);
   if (
@@ -491,23 +495,18 @@ function alter_s_add_1(p) {
 }
 //! look_here file has notes on how to complete
 // new
-var data = [
-  ["a1", "a2", "a3"],
-  ["b1", "b2", "b3"],
-  ["c1", "c2", "c3"],
-];
-
-var col0 = data.map((d) => d[0]); // [ 'a1', 'b1', 'c1' ]
-
-var col1 = data.map((d) => d[1]); // [ 'a2', 'b2', 'c2' ]
-
-console.log(col0);
+function alter_s_add_1_row(p) {
+  console.log("function alter_s_add_1(p)_row");
+  var place = sudoku[p].indexOf("X");
+  sudoku[p][place] = "1";
+  console.log(sudoku);
+}
 function three_numbers_in_row() {
   console.log("function three_numbers_in_row"); // !delete
-  var row0 = sudoku.map((d) => d[0]);
-  var row1 = sudoku.map((d) => d[1]);
-  var row2 = sudoku.map((d) => d[2]);
-  var row3 = sudoku.map((d) => d[3]);
+  row0 = sudoku.map((d) => d[0]);
+  row1 = sudoku.map((d) => d[1]);
+  row2 = sudoku.map((d) => d[2]);
+  row3 = sudoku.map((d) => d[3]);
   console.log(row0);
   console.log(row1);
   console.log(row2);
