@@ -466,21 +466,25 @@ function do_we_use_same_n() {
   }
 }
 function alter_s_add_4(p) {
+  console.log("function alter_s_add_4(p)");
   var place = sudoku[p].indexOf("X");
   sudoku[p][place] = "4";
   console.log(sudoku);
 }
 function alter_s_add_2(p) {
+  console.log("function alter_s_add_2(p)");
   var place = sudoku[p].indexOf("X");
   sudoku[p][place] = "2";
   console.log(sudoku);
 }
 function alter_s_add_3(p) {
+  console.log("function alter_s_add_3(p)");
   var place = sudoku[p].indexOf("X");
   sudoku[p][place] = "3";
   console.log(sudoku);
 }
 function alter_s_add_1(p) {
+  console.log("function alter_s_add_1(p)");
   var place = sudoku[p].indexOf("X");
   sudoku[p][place] = "1";
   console.log(sudoku);
@@ -499,7 +503,7 @@ var col1 = data.map((d) => d[1]); // [ 'a2', 'b2', 'c2' ]
 
 console.log(col0);
 function three_numbers_in_row() {
-  console.log("function three_numbers_in_row");
+  console.log("function three_numbers_in_row"); // !delete
 }
 // * highlighted bookmark for later right else for third solver
 function three_numbers_in_column() {
@@ -508,144 +512,128 @@ function three_numbers_in_column() {
     sudoku[0].indexOf("1") != -1 &&
     sudoku[0].indexOf("2") != -1 &&
     sudoku[0].indexOf("3") != -1 &&
-    sudoku[0].indexOf("4") >= 0
+    sudoku[0].indexOf("4") == -1
   ) {
-    console.log("if"); // !delete
     var p = 0;
     return alter_s_add_4(p);
   } else if (
     sudoku[0].indexOf("1") != -1 &&
     sudoku[0].indexOf("2") != -1 &&
     sudoku[0].indexOf("4") != -1 &&
-    sudoku[0].indexOf("3") >= 0
+    sudoku[0].indexOf("3") == -1
   ) {
-    console.log("if"); // !delete
     var p = 0;
     return alter_s_add_3(p);
   } else if (
     sudoku[0].indexOf("2") != -1 &&
     sudoku[0].indexOf("3") != -1 &&
     sudoku[0].indexOf("4") != -1 &&
-    sudoku[0].indexOf("1") >= 0
+    sudoku[0].indexOf("1") == -1
   ) {
-    console.log("if"); // !delete
     var p = 0;
     return alter_s_add_1(p);
   } else if (
     sudoku[0].indexOf("1") != -1 &&
     sudoku[0].indexOf("3") != -1 &&
     sudoku[0].indexOf("4") != -1 &&
-    sudoku[0].indexOf("2") >= 0
+    sudoku[0].indexOf("2") == -1
   ) {
-    console.log("if"); // !delete
     var p = 0;
     return alter_s_add_2(p);
   } else if (
     sudoku[1].indexOf("1") != -1 &&
     sudoku[1].indexOf("2") != -1 &&
     sudoku[1].indexOf("3") != -1 &&
-    sudoku[1].indexOf("4") >= 0
+    sudoku[1].indexOf("4") == -1
   ) {
-    console.log("if"); // !delete
     var p = 1;
     return alter_s_add_4(p);
   } else if (
     sudoku[1].indexOf("1") != -1 &&
     sudoku[1].indexOf("2") != -1 &&
     sudoku[1].indexOf("4") != -1 &&
-    sudoku[1].indexOf("3") >= 0
+    sudoku[1].indexOf("3") == -1
   ) {
-    console.log("if"); // !delete
     var p = 1;
     return alter_s_add_3(p);
   } else if (
     sudoku[1].indexOf("2") != -1 &&
     sudoku[1].indexOf("3") != -1 &&
     sudoku[1].indexOf("4") != -1 &&
-    sudoku[1].indexOf("1") >= 0
+    sudoku[1].indexOf("1") == -1
   ) {
-    console.log("if"); // !delete
     var p = 1;
     return alter_s_add_1(p);
   } else if (
     sudoku[1].indexOf("1") != -1 &&
     sudoku[1].indexOf("3") != -1 &&
     sudoku[1].indexOf("4") != -1 &&
-    sudoku[1].indexOf("2") >= 0
+    sudoku[1].indexOf("2") == -1
   ) {
-    console.log("if"); // !delete
     var p = 1;
     return alter_s_add_2(p);
   } else if (
     sudoku[2].indexOf("1") != -1 &&
     sudoku[2].indexOf("2") != -1 &&
     sudoku[2].indexOf("3") != -1 &&
-    sudoku[2].indexOf("4") >= 0
+    sudoku[2].indexOf("4") == -1
   ) {
-    console.log("if"); // !delete
     var p = 2;
     return alter_s_add_4(p);
   } else if (
     sudoku[2].indexOf("1") != -1 &&
     sudoku[2].indexOf("2") != -1 &&
     sudoku[2].indexOf("4") != -1 &&
-    sudoku[2].indexOf("3") >= 0
+    sudoku[2].indexOf("3") == -1
   ) {
-    console.log("if"); // !delete
     var p = 2;
     return alter_s_add_3(p);
   } else if (
     sudoku[2].indexOf("2") != -1 &&
     sudoku[2].indexOf("3") != -1 &&
     sudoku[2].indexOf("4") != -1 &&
-    sudoku[2].indexOf("1") >= 0
+    sudoku[2].indexOf("1") == -1
   ) {
-    console.log("if"); // !delete
     var p = 2;
     return alter_s_add_1(p);
   } else if (
     sudoku[2].indexOf("1") != -1 &&
     sudoku[2].indexOf("3") != -1 &&
     sudoku[2].indexOf("4") != -1 &&
-    sudoku[2].indexOf("2") >= 0
+    sudoku[2].indexOf("2") == -1
   ) {
-    console.log("if"); // !delete
     var p = 2;
     return alter_s_add_3(p);
   } else if (
     sudoku[3].indexOf("1") != -1 &&
     sudoku[3].indexOf("2") != -1 &&
     sudoku[3].indexOf("3") != -1 &&
-    sudoku[3].indexOf("4") >= 0
+    sudoku[3].indexOf("4") == -1
   ) {
-    console.log("if"); // !delete
     var p = 3;
     return alter_s_add_4(p);
   } else if (
     sudoku[3].indexOf("1") != -1 &&
     sudoku[3].indexOf("2") != -1 &&
     sudoku[3].indexOf("4") != -1 &&
-    sudoku[3].indexOf("3") >= 0
+    sudoku[3].indexOf("3") == -1
   ) {
-    console.log("if"); // !delete
     var p = 3;
     return alter_s_add_3(p);
   } else if (
     sudoku[3].indexOf("2") != -1 &&
     sudoku[3].indexOf("3") != -1 &&
     sudoku[3].indexOf("4") != -1 &&
-    sudoku[3].indexOf("1") >= 0
+    sudoku[3].indexOf("1") == -1
   ) {
-    console.log("if"); // !delete
     var p = 3;
     return alter_s_add_1(p);
   } else if (
     sudoku[3].indexOf("1") != -1 &&
     sudoku[3].indexOf("3") != -1 &&
     sudoku[3].indexOf("4") != -1 &&
-    sudoku[3].indexOf("2") >= 0
+    sudoku[3].indexOf("2") == -1
   ) {
-    console.log("if"); // !delete
     var p = 3;
     return alter_s_add_2(p);
   }
