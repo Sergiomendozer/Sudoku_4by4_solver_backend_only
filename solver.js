@@ -518,6 +518,96 @@ function three_numbers_in_row() {
     row0.indexOf("3") != -1 &&
     row0.indexOf("4") == -1
   ) {
+  } else if (
+    row0.indexOf("1") != -1 &&
+    row0.indexOf("2") != -1 &&
+    row0.indexOf("4") != -1 &&
+    row0.indexOf("3") == -1
+  ) {
+  } else if (
+    row0.indexOf("1") != -1 &&
+    row0.indexOf("4") != -1 &&
+    row0.indexOf("3") != -1 &&
+    row0.indexOf("2") == -1
+  ) {
+  } else if (
+    row0.indexOf("4") != -1 &&
+    row0.indexOf("2") != -1 &&
+    row0.indexOf("3") != -1 &&
+    row0.indexOf("1") == -1 //!maker
+  ) {
+  } else if (
+    row1.indexOf("1") != -1 &&
+    row1.indexOf("2") != -1 &&
+    row1.indexOf("3") != -1 &&
+    row1.indexOf("4") == -1
+  ) {
+  } else if (
+    row1.indexOf("1") != -1 &&
+    row1.indexOf("2") != -1 &&
+    row1.indexOf("4") != -1 &&
+    row1.indexOf("3") == -1
+  ) {
+  } else if (
+    row1.indexOf("1") != -1 &&
+    row1.indexOf("4") != -1 &&
+    row1.indexOf("3") != -1 &&
+    row1.indexOf("2") == -1
+  ) {
+  } else if (
+    row1.indexOf("4") != -1 &&
+    row1.indexOf("2") != -1 &&
+    row1.indexOf("3") != -1 &&
+    row1.indexOf("1") == -1
+  ) {
+  } else if (
+    row2.indexOf("1") != -1 &&
+    row2.indexOf("2") != -1 &&
+    row2.indexOf("3") != -1 &&
+    row2.indexOf("4") == -1
+  ) {
+  } else if (
+    row2.indexOf("1") != -1 &&
+    row2.indexOf("2") != -1 &&
+    row2.indexOf("4") != -1 &&
+    row2.indexOf("3") == -1
+  ) {
+  } else if (
+    row2.indexOf("1") != -1 &&
+    row2.indexOf("4") != -1 &&
+    row2.indexOf("3") != -1 &&
+    row2.indexOf("2") == -1
+  ) {
+  } else if (
+    row2.indexOf("4") != -1 &&
+    row2.indexOf("2") != -1 &&
+    row2.indexOf("3") != -1 &&
+    row2.indexOf("1") == -1
+  ) {
+  } else if (
+    row3.indexOf("1") != -1 &&
+    row3.indexOf("2") != -1 &&
+    row3.indexOf("3") != -1 &&
+    row3.indexOf("4") == -1
+  ) {
+  } else if (
+    row3.indexOf("1") != -1 &&
+    row3.indexOf("2") != -1 &&
+    row3.indexOf("4") != -1 &&
+    row3.indexOf("3") == -1
+  ) {
+  } else if (
+    row3.indexOf("1") != -1 &&
+    row3.indexOf("4") != -1 &&
+    row3.indexOf("3") != -1 &&
+    row3.indexOf("2") == -1
+  ) {
+  } else if (
+    row3.indexOf("4") != -1 &&
+    row3.indexOf("2") != -1 &&
+    row3.indexOf("3") != -1 &&
+    row3.indexOf("1") == -1
+  ) {
   }
 }
 // * highlighted bookmark for later right else for third solver
