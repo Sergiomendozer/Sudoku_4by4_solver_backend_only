@@ -320,12 +320,12 @@ var sudoku_50 = [
   ["2", "X", "X", "4"],
 ];
 
-var sudoku = sudoku_4;
+var sudoku = sudoku_12;
 //18 is not a 29 lost
 // test not passed row/column does account4:
-//list = [4,5,9,12,15,16,32,35,40,42,43,44,45]
-// test not passed: 2,22,24,33,36,39
-//square account 4: 13,28,31,41
+//list = [5,12,15,32,35,40,44, 2,22,24,33,36,39, 13,31,41
+//square pass: 5
+// square count in else after function three_numbers_in_row
 var first_col = sudoku[0];
 var second_col = sudoku[1];
 var third_col = sudoku[2];
@@ -999,6 +999,7 @@ function replace_Y_with_n() {
 }
 
 function can_you_put_n_in_pos3_3() {
+  console.log("function can_you_put_n_in_pos3_3");
   console.log(sudoku);
   if (
     sudoku[3][3].indexOf("1") != -1 ||
@@ -1127,7 +1128,8 @@ function can_you_put_n_in_pos2_3() {
   }
 }
 function can_you_put_n_in_pos2_2() {
-  console.log(sudoku);
+  console.log("function can_you_put_n_in_pos2_2");
+  console.table(sudoku); //!BETTER
   if (
     sudoku[2][2].indexOf("1") != -1 ||
     sudoku[2][2].indexOf("2") != -1 ||
