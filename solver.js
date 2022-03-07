@@ -504,6 +504,21 @@ var col1 = data.map((d) => d[1]); // [ 'a2', 'b2', 'c2' ]
 console.log(col0);
 function three_numbers_in_row() {
   console.log("function three_numbers_in_row"); // !delete
+  var row0 = sudoku.map((d) => d[0]);
+  var row1 = sudoku.map((d) => d[1]);
+  var row2 = sudoku.map((d) => d[2]);
+  var row3 = sudoku.map((d) => d[3]);
+  console.log(row0);
+  console.log(row1);
+  console.log(row2);
+  console.log(row3);
+  if (
+    row0.indexOf("1") != -1 &&
+    row0.indexOf("2") != -1 &&
+    row0.indexOf("3") != -1 &&
+    row0.indexOf("4") == -1
+  ) {
+  }
 }
 // * highlighted bookmark for later right else for third solver
 function three_numbers_in_column() {
@@ -632,10 +647,12 @@ function three_numbers_in_column() {
     sudoku[3].indexOf("1") != -1 &&
     sudoku[3].indexOf("3") != -1 &&
     sudoku[3].indexOf("4") != -1 &&
-    sudoku[3].indexOf("2") == -1
+    sudoku[3].indexOf("2") == 0
   ) {
     var p = 3;
     return alter_s_add_2(p);
+  } else {
+    return three_numbers_in_row();
   }
 }
 function replace_N_or_Y_with_X_col_4_alter_solve() {
