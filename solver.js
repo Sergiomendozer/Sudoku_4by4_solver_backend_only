@@ -495,14 +495,16 @@ function alter_s_add_1(p) {
 }
 //! look_here file has notes on how to complete
 // new
-function alter_s_add_1_row(p) {
-  console.log("function alter_s_add_1(p)_row");
-  var place = sudoku[p].indexOf("X");
-  sudoku[p][place] = "1";
+function alter_s_add_1_row(row) {
+  console.log("function alter_s_add_1(row)_row");
+  var place = row.indexOf("X");
   console.log(sudoku);
+  if (row == row1) {
+    console.log("var = row1");
+  }
 }
 function three_numbers_in_row() {
-  console.log("function three_numbers_in_row"); // !delete
+  console.log("function three_numbers_in_row");
   row0 = sudoku.map((d) => d[0]);
   row1 = sudoku.map((d) => d[1]);
   row2 = sudoku.map((d) => d[2]);
@@ -559,6 +561,7 @@ function three_numbers_in_row() {
     row1.indexOf("3") != -1 &&
     row1.indexOf("1") == -1
   ) {
+    return alter_s_add_1_row(row1);
   } else if (
     row2.indexOf("1") != -1 &&
     row2.indexOf("2") != -1 &&
