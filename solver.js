@@ -397,7 +397,6 @@ function is_it_solved() {
   }
 }
 
-// * highlighted bookmark
 function checker_is_4_solved() {
   if (count_four == 4) {
     count_four = -1;
@@ -451,6 +450,7 @@ function order_of_sudoku_numbers() {
 
 // * highlighted bookmark//
 function do_we_use_same_n() {
+  console.log("function do_we_use_same_n");
   console.log(cols_counter_Y);
   if (
     cols_counter_Y[0][1] >= 2 ||
@@ -468,7 +468,7 @@ function do_we_use_same_n() {
     counter_2(sudoku, two, count_two);
     counter_3(sudoku, three, count_three);
     counter_4(sudoku, four, count_four);
-    console.log(sudoku);
+    console.table(sudoku);
     is_it_solved();
   } else if (
     cols_counter_Y[0][1] == 2 ||
@@ -476,9 +476,9 @@ function do_we_use_same_n() {
     cols_counter_Y[2][1] == 2 ||
     cols_counter_Y[3][1] == 2
   ) {
-    console.log("new");
+    console.log("this is not needed!!!");
   } else {
-    console.log(sudoku);
+    console.table(sudoku);
     count_one = 0;
     count_two = 0;
     count_three = 0;
@@ -489,7 +489,7 @@ function do_we_use_same_n() {
     counter_2(sudoku, two, count_two);
     counter_3(sudoku, three, count_three);
     counter_4(sudoku, four, count_four);
-    console.log(sudoku);
+    console.table(sudoku);
     is_it_solved();
   }
 }
@@ -497,28 +497,28 @@ function alter_s_add_4(p) {
   console.log("function alter_s_add_4(p)");
   var place = sudoku[p].indexOf("X");
   sudoku[p][place] = "4";
-  console.log(sudoku);
+  console.table(sudoku);
   return do_we_use_same_n();
 }
 function alter_s_add_2(p) {
   console.log("function alter_s_add_2(p)");
   var place = sudoku[p].indexOf("X");
   sudoku[p][place] = "2";
-  console.log(sudoku);
+  console.table(sudoku);
   return do_we_use_same_n();
 }
 function alter_s_add_3(p) {
   console.log("function alter_s_add_3(p)");
   var place = sudoku[p].indexOf("X");
   sudoku[p][place] = "3";
-  console.log(sudoku);
+  console.table(sudoku);
   return do_we_use_same_n();
 }
 function alter_s_add_1(p) {
   console.log("function alter_s_add_1(p)");
   var place = sudoku[p].indexOf("X");
   sudoku[p][place] = "1";
-  console.log(sudoku);
+  console.table(sudoku);
   return do_we_use_same_n();
 }
 //! look_here file has notes on how to complete
@@ -529,22 +529,22 @@ function alter_s_add_4_row(row) {
   if (row == row0) {
     console.log("var = row0");
     sudoku[col_place][0] = "4";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   } else if (row == row1) {
     console.log("var = row1");
     sudoku[col_place][1] = "4";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   } else if (row == row2) {
     console.log("var = row2");
     sudoku[col_place][2] = "4";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   } else if (row == row3) {
     console.log("var = row3");
     sudoku[col_place][3] = "4";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   }
 }
@@ -554,22 +554,22 @@ function alter_s_add_3_row(row) {
   if (row == row0) {
     console.log("var = row0");
     sudoku[col_place][0] = "3";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   } else if (row == row1) {
     console.log("var = row1");
     sudoku[col_place][1] = "3";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   } else if (row == row2) {
     console.log("var = row2");
     sudoku[col_place][2] = "3";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   } else if (row == row3) {
     console.log("var = row3");
     sudoku[col_place][3] = "3";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   }
 }
@@ -579,22 +579,22 @@ function alter_s_add_2_row(row) {
   if (row == row0) {
     console.log("var = row0");
     sudoku[col_place][0] = "2";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   } else if (row == row1) {
     console.log("var = row1");
     sudoku[col_place][1] = "2";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   } else if (row == row2) {
     console.log("var = row2");
     sudoku[col_place][2] = "2";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   } else if (row == row3) {
     console.log("var = row3");
     sudoku[col_place][3] = "2";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   }
 }
@@ -604,22 +604,22 @@ function alter_s_add_1_row(row) {
   if (row == row0) {
     console.log("var = row0");
     sudoku[col_place][0] = "1";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   } else if (row == row1) {
     console.log("var = row1");
     sudoku[col_place][1] = "1";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   } else if (row == row2) {
     console.log("var = row2");
     sudoku[col_place][2] = "1";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   } else if (row == row3) {
     console.log("var = row3");
     sudoku[col_place][3] = "1";
-    console.log(sudoku);
+    console.table(sudoku);
     return do_we_use_same_n();
   }
 }
@@ -890,7 +890,7 @@ function replace_N_or_Y_with_X_col_4_alter_solve() {
     }
   }
   console.log("alter-replace n nd y"); // !delete
-  console.log(sudoku);
+  console.table(sudoku);
   return three_numbers_in_column();
   //   return do_we_use_same_n(); used for later
 }
@@ -1000,7 +1000,7 @@ function replace_Y_with_n() {
 
 function can_you_put_n_in_pos3_3() {
   console.log("function can_you_put_n_in_pos3_3");
-  console.log(sudoku);
+  console.table(sudoku);
   if (
     sudoku[3][3].indexOf("1") != -1 ||
     sudoku[3][3].indexOf("2") != -1 ||
@@ -1028,7 +1028,7 @@ function can_you_put_n_in_pos3_3() {
   }
 }
 function can_you_put_n_in_pos3_2() {
-  console.log(sudoku);
+  console.table(sudoku);
   if (
     sudoku[3][2].indexOf("1") != -1 ||
     sudoku[3][2].indexOf("2") != -1 ||
@@ -1053,7 +1053,7 @@ function can_you_put_n_in_pos3_2() {
   }
 }
 function can_you_put_n_in_pos3_1() {
-  console.log(sudoku);
+  console.table(sudoku);
   if (
     sudoku[3][1].indexOf("1") != -1 ||
     sudoku[3][1].indexOf("2") != -1 ||
@@ -1078,7 +1078,7 @@ function can_you_put_n_in_pos3_1() {
   }
 }
 function can_you_put_n_in_pos3_0() {
-  console.log(sudoku);
+  console.table(sudoku);
   if (
     sudoku[3][0].indexOf("1") != -1 ||
     sudoku[3][0].indexOf("2") != -1 ||
@@ -1103,7 +1103,7 @@ function can_you_put_n_in_pos3_0() {
   }
 }
 function can_you_put_n_in_pos2_3() {
-  console.log(sudoku);
+  console.table(sudoku);
   if (
     sudoku[2][3].indexOf("1") != -1 ||
     sudoku[2][3].indexOf("2") != -1 ||
@@ -1154,7 +1154,7 @@ function can_you_put_n_in_pos2_2() {
   }
 }
 function can_you_put_n_in_pos2_1() {
-  console.log(sudoku);
+  console.table(sudoku);
   if (
     sudoku[2][1].indexOf("1") != -1 ||
     sudoku[2][1].indexOf("2") != -1 ||
@@ -1179,7 +1179,7 @@ function can_you_put_n_in_pos2_1() {
   }
 }
 function can_you_put_n_in_pos2_0() {
-  console.log(sudoku);
+  console.table(sudoku);
   if (
     sudoku[2][0].indexOf("1") != -1 ||
     sudoku[2][0].indexOf("2") != -1 ||
@@ -1204,7 +1204,7 @@ function can_you_put_n_in_pos2_0() {
   }
 }
 function can_you_put_n_in_pos1_3() {
-  console.log(sudoku);
+  console.table(sudoku);
   if (
     sudoku[1][3].indexOf("1") != -1 ||
     sudoku[1][3].indexOf("2") != -1 ||
@@ -1229,7 +1229,7 @@ function can_you_put_n_in_pos1_3() {
   }
 }
 function can_you_put_n_in_pos1_2() {
-  console.log(sudoku);
+  console.table(sudoku);
   if (
     sudoku[1][2].indexOf("1") != -1 ||
     sudoku[1][2].indexOf("2") != -1 ||
@@ -1254,7 +1254,7 @@ function can_you_put_n_in_pos1_2() {
   }
 }
 function can_you_put_n_in_pos1_1() {
-  console.log(sudoku);
+  console.table(sudoku);
   if (
     sudoku[1][1].indexOf("1") != -1 ||
     sudoku[1][1].indexOf("2") != -1 ||
@@ -1279,7 +1279,7 @@ function can_you_put_n_in_pos1_1() {
   }
 }
 function can_you_put_n_in_pos1_0() {
-  console.log(sudoku);
+  console.table(sudoku);
   if (
     sudoku[1][0].indexOf("1") != -1 ||
     sudoku[1][0].indexOf("2") != -1 ||
@@ -1305,7 +1305,7 @@ function can_you_put_n_in_pos1_0() {
 }
 
 function can_you_put_n_in_pos0_3() {
-  console.log(sudoku);
+  console.table(sudoku);
   if (
     sudoku[0][3].indexOf("1") != -1 ||
     sudoku[0][3].indexOf("2") != -1 ||
@@ -1330,7 +1330,7 @@ function can_you_put_n_in_pos0_3() {
   }
 }
 function can_you_put_n_in_pos0_2() {
-  console.log(sudoku); //! delete
+  console.table(sudoku); //! delete
   if (
     sudoku[0][2].indexOf("1") != -1 ||
     sudoku[0][2].indexOf("2") != -1 ||
@@ -1356,7 +1356,7 @@ function can_you_put_n_in_pos0_2() {
 }
 
 function can_you_put_n_in_pos0_1() {
-  console.log(sudoku); //! delete
+  console.table(sudoku); //! delete
   if (
     sudoku[0][1].indexOf("1") != -1 ||
     sudoku[0][1].indexOf("2") != -1 ||
@@ -1382,7 +1382,7 @@ function can_you_put_n_in_pos0_1() {
 }
 
 function can_you_put_n_in_pos0_0() {
-  console.log(sudoku);
+  console.table(sudoku);
   if (
     sudoku[0][0].indexOf("1") != -1 ||
     sudoku[0][0].indexOf("2") != -1 ||
