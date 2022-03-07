@@ -8,4 +8,5 @@ var col0 = data.map((d) => d[0]); // [ 'a1', 'b1', 'c1' ]
 
 var col1 = data.map((d) => d[1]); // [ 'a2', 'b2', 'c2' ]
 
+console.log(col0);
 // and wil take a column make vars then do ifs

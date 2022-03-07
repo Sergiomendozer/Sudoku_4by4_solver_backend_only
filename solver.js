@@ -486,9 +486,24 @@ function alter_s_add_1(p) {
   console.log(sudoku);
 }
 //! look_here file has notes on how to complete
+// new
+var data = [
+  ["a1", "a2", "a3"],
+  ["b1", "b2", "b3"],
+  ["c1", "c2", "c3"],
+];
+
+var col0 = data.map((d) => d[0]); // [ 'a1', 'b1', 'c1' ]
+
+var col1 = data.map((d) => d[1]); // [ 'a2', 'b2', 'c2' ]
+
+console.log(col0);
+function three_numbers_in_row() {
+  console.log("function three_numbers_in_row");
+}
 // * highlighted bookmark for later right else for third solver
-function three_numbers_in_row_or_column() {
-  console.log("three_numbers_in_row_or_column"); // !delete
+function three_numbers_in_column() {
+  console.log("function three_numbers_in_column"); // !delete
   if (
     sudoku[0].indexOf("1") != -1 &&
     sudoku[0].indexOf("2") != -1 &&
@@ -643,7 +658,7 @@ function replace_N_or_Y_with_X_col_4_alter_solve() {
   }
   console.log("alter-replace n nd y"); // !delete
   console.log(sudoku);
-  return three_numbers_in_row_or_column();
+  return three_numbers_in_column();
   //   return do_we_use_same_n(); used for later
 }
 function replace_N_or_Y_with_X_col_3_alter_solve() {
