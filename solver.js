@@ -474,24 +474,28 @@ function alter_s_add_4(p) {
   var place = sudoku[p].indexOf("X");
   sudoku[p][place] = "4";
   console.log(sudoku);
+  return do_we_use_same_n();
 }
 function alter_s_add_2(p) {
   console.log("function alter_s_add_2(p)");
   var place = sudoku[p].indexOf("X");
   sudoku[p][place] = "2";
   console.log(sudoku);
+  return do_we_use_same_n();
 }
 function alter_s_add_3(p) {
   console.log("function alter_s_add_3(p)");
   var place = sudoku[p].indexOf("X");
   sudoku[p][place] = "3";
   console.log(sudoku);
+  return do_we_use_same_n();
 }
 function alter_s_add_1(p) {
   console.log("function alter_s_add_1(p)");
   var place = sudoku[p].indexOf("X");
   sudoku[p][place] = "1";
   console.log(sudoku);
+  return do_we_use_same_n();
 }
 //! look_here file has notes on how to complete
 // new
@@ -502,18 +506,22 @@ function alter_s_add_4_row(row) {
     console.log("var = row0");
     sudoku[col_place][0] = "4";
     console.log(sudoku);
+    return do_we_use_same_n();
   } else if (row == row1) {
     console.log("var = row1");
     sudoku[col_place][1] = "4";
     console.log(sudoku);
+    return do_we_use_same_n();
   } else if (row == row2) {
     console.log("var = row2");
     sudoku[col_place][2] = "4";
     console.log(sudoku);
+    return do_we_use_same_n();
   } else if (row == row3) {
     console.log("var = row3");
     sudoku[col_place][3] = "4";
     console.log(sudoku);
+    return do_we_use_same_n();
   }
 }
 function alter_s_add_3_row(row) {
@@ -523,18 +531,22 @@ function alter_s_add_3_row(row) {
     console.log("var = row0");
     sudoku[col_place][0] = "3";
     console.log(sudoku);
+    return do_we_use_same_n();
   } else if (row == row1) {
     console.log("var = row1");
     sudoku[col_place][1] = "3";
     console.log(sudoku);
+    return do_we_use_same_n();
   } else if (row == row2) {
     console.log("var = row2");
     sudoku[col_place][2] = "3";
     console.log(sudoku);
+    return do_we_use_same_n();
   } else if (row == row3) {
     console.log("var = row3");
     sudoku[col_place][3] = "3";
     console.log(sudoku);
+    return do_we_use_same_n();
   }
 }
 function alter_s_add_2_row(row) {
@@ -544,18 +556,22 @@ function alter_s_add_2_row(row) {
     console.log("var = row0");
     sudoku[col_place][0] = "2";
     console.log(sudoku);
+    return do_we_use_same_n();
   } else if (row == row1) {
     console.log("var = row1");
     sudoku[col_place][1] = "2";
     console.log(sudoku);
+    return do_we_use_same_n();
   } else if (row == row2) {
     console.log("var = row2");
     sudoku[col_place][2] = "2";
     console.log(sudoku);
+    return do_we_use_same_n();
   } else if (row == row3) {
     console.log("var = row3");
     sudoku[col_place][3] = "2";
     console.log(sudoku);
+    return do_we_use_same_n();
   }
 }
 function alter_s_add_1_row(row) {
@@ -565,18 +581,22 @@ function alter_s_add_1_row(row) {
     console.log("var = row0");
     sudoku[col_place][0] = "1";
     console.log(sudoku);
+    return do_we_use_same_n();
   } else if (row == row1) {
     console.log("var = row1");
     sudoku[col_place][1] = "1";
     console.log(sudoku);
+    return do_we_use_same_n();
   } else if (row == row2) {
     console.log("var = row2");
     sudoku[col_place][2] = "1";
     console.log(sudoku);
+    return do_we_use_same_n();
   } else if (row == row3) {
     console.log("var = row3");
     sudoku[col_place][3] = "1";
     console.log(sudoku);
+    return do_we_use_same_n();
   }
 }
 
@@ -596,42 +616,49 @@ function three_numbers_in_row() {
     row0.indexOf("3") != -1 &&
     row0.indexOf("4") == -1
   ) {
+    return alter_s_add_4_row(row0);
   } else if (
     row0.indexOf("1") != -1 &&
     row0.indexOf("2") != -1 &&
     row0.indexOf("4") != -1 &&
     row0.indexOf("3") == -1
   ) {
+    return alter_s_add_3_row(row0);
   } else if (
     row0.indexOf("1") != -1 &&
     row0.indexOf("4") != -1 &&
     row0.indexOf("3") != -1 &&
     row0.indexOf("2") == -1
   ) {
+    return alter_s_add_2_row(row0);
   } else if (
     row0.indexOf("4") != -1 &&
     row0.indexOf("2") != -1 &&
     row0.indexOf("3") != -1 &&
     row0.indexOf("1") == -1
   ) {
+    return alter_s_add_1_row(row0);
   } else if (
     row1.indexOf("1") != -1 &&
     row1.indexOf("2") != -1 &&
     row1.indexOf("3") != -1 &&
     row1.indexOf("4") == -1
   ) {
+    return alter_s_add_4_row(row1);
   } else if (
     row1.indexOf("1") != -1 &&
     row1.indexOf("2") != -1 &&
     row1.indexOf("4") != -1 &&
     row1.indexOf("3") == -1
   ) {
+    return alter_s_add_3_row(row1);
   } else if (
     row1.indexOf("1") != -1 &&
     row1.indexOf("4") != -1 &&
     row1.indexOf("3") != -1 &&
     row1.indexOf("2") == -1
   ) {
+    return alter_s_add_2_row(row1);
   } else if (
     row1.indexOf("4") != -1 &&
     row1.indexOf("2") != -1 &&
@@ -645,48 +672,56 @@ function three_numbers_in_row() {
     row2.indexOf("3") != -1 &&
     row2.indexOf("4") == -1
   ) {
+    return alter_s_add_4_row(row2);
   } else if (
     row2.indexOf("1") != -1 &&
     row2.indexOf("2") != -1 &&
     row2.indexOf("4") != -1 &&
     row2.indexOf("3") == -1
   ) {
+    return alter_s_add_3_row(row2);
   } else if (
     row2.indexOf("1") != -1 &&
     row2.indexOf("4") != -1 &&
     row2.indexOf("3") != -1 &&
     row2.indexOf("2") == -1
   ) {
+    return alter_s_add_2_row(row2);
   } else if (
     row2.indexOf("4") != -1 &&
     row2.indexOf("2") != -1 &&
     row2.indexOf("3") != -1 &&
     row2.indexOf("1") == -1
   ) {
+    return alter_s_add_1_row(row2);
   } else if (
     row3.indexOf("1") != -1 &&
     row3.indexOf("2") != -1 &&
     row3.indexOf("3") != -1 &&
     row3.indexOf("4") == -1
   ) {
+    return alter_s_add_4_row(row3);
   } else if (
     row3.indexOf("1") != -1 &&
     row3.indexOf("2") != -1 &&
     row3.indexOf("4") != -1 &&
     row3.indexOf("3") == -1
   ) {
+    return alter_s_add_3_row(row3);
   } else if (
     row3.indexOf("1") != -1 &&
     row3.indexOf("4") != -1 &&
     row3.indexOf("3") != -1 &&
     row3.indexOf("2") == -1
   ) {
+    return alter_s_add_2_row(row3);
   } else if (
     row3.indexOf("4") != -1 &&
     row3.indexOf("2") != -1 &&
     row3.indexOf("3") != -1 &&
     row3.indexOf("1") == -1
   ) {
+    return alter_s_add_1_row(row3);
   }
 }
 // * highlighted bookmark for later right else for third solver
@@ -816,7 +851,7 @@ function three_numbers_in_column() {
     sudoku[3].indexOf("1") != -1 &&
     sudoku[3].indexOf("3") != -1 &&
     sudoku[3].indexOf("4") != -1 &&
-    sudoku[3].indexOf("2") == 0
+    sudoku[3].indexOf("2") == -1
   ) {
     var p = 3;
     return alter_s_add_2(p);
