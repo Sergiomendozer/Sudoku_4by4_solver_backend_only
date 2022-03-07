@@ -30,6 +30,18 @@ var sudoku_4 = [
   ["X", "X", "X", "X"],
   ["X", "3", "4", "1"],
 ];
+var sudoku_4_s = [
+  ["1", "4", "2", "3"],
+  ["X", "2", "X", "X"],
+  ["X", "1", "X", "X"],
+  ["2", "3", "4", "1"],
+];
+var sudoku_4_s2 = [
+  ["X", "4", "X", "3"],
+  ["X", "2", "X", "X"],
+  ["4", "1", "X", "X"],
+  ["2", "3", "4", "1"],
+];
 var sudoku_5 = [
   ["X", "3", "X", "X"],
   ["1", "X", "X", "3"],
@@ -425,6 +437,7 @@ function order_of_sudoku_numbers() {
   dict["three"] = count_three;
   dict["four"] = count_four;
 
+  console.log("function order_of_sudoku_numbers");
   console.log(dict);
   for (var count in dict) {
     sortable.push([count, dict[count]]);
@@ -433,7 +446,7 @@ function order_of_sudoku_numbers() {
   sortable.sort(function (a, b) {
     return b[1] - a[1];
   });
-  return which_number_to_insert();
+  return which_number_to_insert(); // comment out add on else statement of same n
 }
 
 // * highlighted bookmark//
@@ -445,7 +458,18 @@ function do_we_use_same_n() {
     cols_counter_Y[2][1] >= 2 ||
     cols_counter_Y[3][1] >= 2
   ) {
-    return can_you_put_n_in_pos0_0(n);
+    count_one = 0;
+    count_two = 0;
+    count_three = 0;
+    count_four = 0;
+    dict = {};
+    sortable = [];
+    counter_1(sudoku, one, count_one);
+    counter_2(sudoku, two, count_two);
+    counter_3(sudoku, three, count_three);
+    counter_4(sudoku, four, count_four);
+    console.log(sudoku);
+    is_it_solved();
   } else if (
     cols_counter_Y[0][1] == 2 ||
     cols_counter_Y[1][1] == 2 ||
@@ -501,7 +525,7 @@ function alter_s_add_1(p) {
 // new
 function alter_s_add_4_row(row) {
   console.log("function alter_s_add_4(row)_row");
-  var col_place = row1.indexOf("X");
+  var col_place = row.indexOf("X");
   if (row == row0) {
     console.log("var = row0");
     sudoku[col_place][0] = "4";
@@ -526,7 +550,7 @@ function alter_s_add_4_row(row) {
 }
 function alter_s_add_3_row(row) {
   console.log("function alter_s_add_3(row)_row");
-  var col_place = row1.indexOf("X");
+  var col_place = row.indexOf("X");
   if (row == row0) {
     console.log("var = row0");
     sudoku[col_place][0] = "3";
@@ -551,7 +575,7 @@ function alter_s_add_3_row(row) {
 }
 function alter_s_add_2_row(row) {
   console.log("function alter_s_add_2(row)_row");
-  var col_place = row1.indexOf("X");
+  var col_place = row.indexOf("X");
   if (row == row0) {
     console.log("var = row0");
     sudoku[col_place][0] = "2";
@@ -576,7 +600,7 @@ function alter_s_add_2_row(row) {
 }
 function alter_s_add_1_row(row) {
   console.log("function alter_s_add_1(row)_row");
-  var col_place = row1.indexOf("X");
+  var col_place = row.indexOf("X");
   if (row == row0) {
     console.log("var = row0");
     sudoku[col_place][0] = "1";
