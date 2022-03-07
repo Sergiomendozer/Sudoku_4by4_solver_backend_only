@@ -1,25 +1,4 @@
-else if (
-    row3.indexOf("1") != -1 &&
-    row3.indexOf("2") != -1 &&
-    row3.indexOf("3") != -1 &&
-    row3.indexOf("4") == -1
-  ) {
-  } else if (
-    row3.indexOf("1") != -1 &&
-    row3.indexOf("2") != -1 &&
-    row3.indexOf("4") != -1 &&
-    row3.indexOf("3") == -1
-  ) {
-  } else if (
-    row3.indexOf("1") != -1 &&
-    row3.indexOf("4") != -1 &&
-    row3.indexOf("3") != -1 &&
-    row3.indexOf("2") == -1
-  ) {
-  } else if (
-    row3.indexOf("4") != -1 &&
-    row3.indexOf("2") != -1 &&
-    row3.indexOf("3") != -1 &&
-    row3.indexOf("1") == -1 //!maker
-  ) {
-  }
+return alter_s_add_1_row(row);
+return alter_s_add_2_row(row);
+return alter_s_add_3_row(row);
+return alter_s_add_0_row(row);

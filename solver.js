@@ -495,14 +495,91 @@ function alter_s_add_1(p) {
 }
 //! look_here file has notes on how to complete
 // new
-function alter_s_add_1_row(row) {
-  console.log("function alter_s_add_1(row)_row");
-  var place = row.indexOf("X");
-  console.log(sudoku);
-  if (row == row1) {
+function alter_s_add_4_row(row) {
+  console.log("function alter_s_add_4(row)_row");
+  var col_place = row1.indexOf("X");
+  if (row == row0) {
+    console.log("var = row0");
+    sudoku[col_place][0] = "4";
+    console.log(sudoku);
+  } else if (row == row1) {
     console.log("var = row1");
+    sudoku[col_place][1] = "4";
+    console.log(sudoku);
+  } else if (row == row2) {
+    console.log("var = row2");
+    sudoku[col_place][2] = "4";
+    console.log(sudoku);
+  } else if (row == row3) {
+    console.log("var = row3");
+    sudoku[col_place][3] = "4";
+    console.log(sudoku);
   }
 }
+function alter_s_add_3_row(row) {
+  console.log("function alter_s_add_3(row)_row");
+  var col_place = row1.indexOf("X");
+  if (row == row0) {
+    console.log("var = row0");
+    sudoku[col_place][0] = "3";
+    console.log(sudoku);
+  } else if (row == row1) {
+    console.log("var = row1");
+    sudoku[col_place][1] = "3";
+    console.log(sudoku);
+  } else if (row == row2) {
+    console.log("var = row2");
+    sudoku[col_place][2] = "3";
+    console.log(sudoku);
+  } else if (row == row3) {
+    console.log("var = row3");
+    sudoku[col_place][3] = "3";
+    console.log(sudoku);
+  }
+}
+function alter_s_add_2_row(row) {
+  console.log("function alter_s_add_2(row)_row");
+  var col_place = row1.indexOf("X");
+  if (row == row0) {
+    console.log("var = row0");
+    sudoku[col_place][0] = "2";
+    console.log(sudoku);
+  } else if (row == row1) {
+    console.log("var = row1");
+    sudoku[col_place][1] = "2";
+    console.log(sudoku);
+  } else if (row == row2) {
+    console.log("var = row2");
+    sudoku[col_place][2] = "2";
+    console.log(sudoku);
+  } else if (row == row3) {
+    console.log("var = row3");
+    sudoku[col_place][3] = "2";
+    console.log(sudoku);
+  }
+}
+function alter_s_add_1_row(row) {
+  console.log("function alter_s_add_1(row)_row");
+  var col_place = row1.indexOf("X");
+  if (row == row0) {
+    console.log("var = row0");
+    sudoku[col_place][0] = "1";
+    console.log(sudoku);
+  } else if (row == row1) {
+    console.log("var = row1");
+    sudoku[col_place][1] = "1";
+    console.log(sudoku);
+  } else if (row == row2) {
+    console.log("var = row2");
+    sudoku[col_place][2] = "1";
+    console.log(sudoku);
+  } else if (row == row3) {
+    console.log("var = row3");
+    sudoku[col_place][3] = "1";
+    console.log(sudoku);
+  }
+}
+
 function three_numbers_in_row() {
   console.log("function three_numbers_in_row");
   row0 = sudoku.map((d) => d[0]);
@@ -535,7 +612,7 @@ function three_numbers_in_row() {
     row0.indexOf("4") != -1 &&
     row0.indexOf("2") != -1 &&
     row0.indexOf("3") != -1 &&
-    row0.indexOf("1") == -1 //!maker
+    row0.indexOf("1") == -1
   ) {
   } else if (
     row1.indexOf("1") != -1 &&
