@@ -1028,6 +1028,7 @@ function can_you_put_n_in_pos3_3() {
   }
 }
 function can_you_put_n_in_pos3_2() {
+  console.log("function can_you_put_n_in_pos3_2");
   console.table(sudoku);
   if (
     sudoku[3][2].indexOf("1") != -1 ||
@@ -1053,6 +1054,7 @@ function can_you_put_n_in_pos3_2() {
   }
 }
 function can_you_put_n_in_pos3_1() {
+  console.log("function can_you_put_n_in_pos3_1");
   console.table(sudoku);
   if (
     sudoku[3][1].indexOf("1") != -1 ||
