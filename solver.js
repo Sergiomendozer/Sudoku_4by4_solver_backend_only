@@ -265,66 +265,19 @@ var sudoku_41 = [
   ["X", "3", "X", "X"],
   ["2", "X", "X", "4"],
 ];
-var sudoku_42 = [
-  ["2", "X", "X", "X"],
-  ["X", "4", "X", "X"],
-  ["X", "X", "X", "3"],
-  ["4", "X", "X", "1"],
-];
-var sudoku_43 = [
-  ["X", "X", "X", "1"],
-  ["3", "X", "4", "X"],
-  ["1", "X", "X", "X"],
-  ["X", "2", "X", "3"],
-];
 var sudoku_44 = [
   ["X", "X", "1", "4"],
   ["X", "X", "X", "X"],
   ["X", "3", "X", "X"],
   ["1", "X", "X", "2"],
 ];
-var sudoku_45 = [
-  ["X", "2", "4", "X"],
-  ["X", "X", "X", "X"],
-  ["3", "X", "X", "X"],
-  ["X", "4", "X", "1"],
-];
-var sudoku_46 = [
-  ["4", "X", "3", "X"],
-  ["X", "X", "X", "2"],
-  ["X", "3", "X", "4"],
-  ["X", "X", "1", "X"],
-];
-var sudoku_47 = [
-  ["4", "X", "X", "3"],
-  ["X", "1", "4", "X"],
-  ["2", "X", "X", "1"],
-  ["X", "3", "X", "X"],
-];
-var sudoku_48 = [
-  ["3", "2", "X", "X"],
-  ["X", "X", "X", "X"],
-  ["X", "X", "X", "1"],
-  ["1", "X", "X", "3"],
-];
-var sudoku_49 = [
-  ["4", "X", "3", "X"],
-  ["X", "2", "X", "X"],
-  ["X", "4", "X", "X"],
-  ["2", "X", "X", "1"],
-];
-var sudoku_50 = [
-  ["X", "X", "X", "X"],
-  ["X", "4", "X", "3"],
-  ["X", "3", "X", "X"],
-  ["2", "X", "X", "4"],
-];
 
 var sudoku = sudoku_13;
 // test not passed row/column does account4:
-//list = [2,5,13,15,22,31,33,35,36,39, 40,41,44,
+//list = [2,5,13,15,22,24,31,33,35,36,39,40,41,44,
 //square pass: 2?,5,13,24,31,35,36,39,41,44,
 // square count in else after function three_numbers_in_row
+// must have a minimum of 5 number already:40, 39
 var first_col = sudoku[0];
 var second_col = sudoku[1];
 var third_col = sudoku[2];
@@ -622,6 +575,26 @@ function alter_s_add_1_row(row) {
     return do_we_use_same_n();
   }
 }
+function square_solve() {
+  console.log("function square_solve");
+  var square1 = [];
+  var square2 = [];
+  var square3 = [];
+  var square4 = [];
+  square1.push(sudoku[0][0]);
+  square1.push(sudoku[0][1]);
+  square1.push(sudoku[1][0]);
+  square1.push(sudoku[1][1]);
+  console.log(square1);
+  if (
+    square1.indexOf("1") != -1 &&
+    square1.indexOf("2") != -1 &&
+    square1.indexOf("3") != -1 &&
+    square1.indexOf("4") == -1
+  ) {
+    console.log("if");
+  }
+}
 
 function three_numbers_in_row() {
   console.log("function three_numbers_in_row");
@@ -745,6 +718,8 @@ function three_numbers_in_row() {
     row3.indexOf("1") == -1
   ) {
     return alter_s_add_1_row(row3);
+  } else {
+    return square_solve();
   }
 }
 // * highlighted bookmark for later right else for third solver
