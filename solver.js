@@ -31,11 +31,22 @@ var sudoku_39 = [
   ["X", "2", "X", "X"],
   ["X", "X", "1", "X"],
 ];
+var sudoku_h = [
+  ["X", "X", "X", "X"],
+  ["1", "X", "3", "X"],
+  ["X", "3", "X", "4"],
+  ["X", "X", "2", "X"],
+];
+var sudoku_jk = [
+  ["X", "X", "X", "X"],
+  ["X", "3", "2", "X"],
+  ["X", "X", "1", "X"],
+  ["X", "4", "3", "X"],
+];
 
-var sudoku = sudoku_39;
+var sudoku = sudoku_h;
 // 2, 18, 29,22, 40not above 5 numbers given
-// check:39,36
-// box2:
+// check:39,36, h, jk
 var first_col = sudoku[0];
 var second_col = sudoku[1];
 var third_col = sudoku[2];
