@@ -259,25 +259,12 @@ var sudoku_40 = [
   ["X", "X", "X", "X"],
   ["X", "3", "X", "4"],
 ];
-var sudoku_41 = [
-  ["X", "4", "X", "X"],
-  ["X", "X", "X", "1"],
-  ["X", "3", "X", "X"],
-  ["2", "X", "X", "4"],
-];
-var sudoku_44 = [
-  ["X", "X", "1", "4"],
-  ["X", "X", "X", "X"],
-  ["X", "3", "X", "X"],
-  ["1", "X", "X", "2"],
-];
 
-var sudoku = sudoku_44;
-// test not passed row/column does account4:
-//list = [2,5,13,15,22,24,31,33,35,36,39,40,41,44,
-//square pass: 2?,5,13,24,31,35,36,39,41,44,
-// square count in else after function three_numbers_in_row
-// must have a minimum of 5 number already:40, 39
+var sudoku = sudoku_1;
+// 2, 18, 29 not above 5 numbers given
+// check: 40,39,36,22
+// box1:
+// box2:
 var first_col = sudoku[0];
 var second_col = sudoku[1];
 var third_col = sudoku[2];
@@ -597,17 +584,26 @@ function place_last_n_in_box_1(index_placement1, index_placement2) {
   console.table(sudoku);
   return do_we_use_same_n();
 }
+//bookmark
 function box1_solve() {
   // this function tells where is X
   console.log("box1_solve");
   if (sudoku[0][0].indexOf("X") != -1) {
+    var index_placement1 = 0;
+    var index_placement2 = 0;
+    return place_last_n_in_box_1(index_placement1, index_placement2);
   } else if (sudoku[0][1].indexOf("X") != -1) {
+    var index_placement1 = 0;
+    var index_placement2 = 1;
+    return place_last_n_in_box_1(index_placement1, index_placement2);
   } else if (sudoku[1][0].indexOf("X") != -1) {
     var index_placement1 = 1;
     var index_placement2 = 0;
-    console.log("here");
     return place_last_n_in_box_1(index_placement1, index_placement2);
   } else if (sudoku[1][1].indexOf("X") != -1) {
+    var index_placement1 = 1;
+    var index_placement2 = 1;
+    return place_last_n_in_box_1(index_placement1, index_placement2);
   }
 }
 
