@@ -846,7 +846,7 @@ function three_numbers_in_column() {
     sudoku[2].indexOf("2") == -1
   ) {
     var p = 2;
-    return alter_s_add_3(p);
+    return alter_s_add_2(p);
   } else if (
     sudoku[3].indexOf("1") != -1 &&
     sudoku[3].indexOf("2") != -1 &&
