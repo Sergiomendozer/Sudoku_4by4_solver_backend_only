@@ -1,3 +1,5 @@
+// do not use 18 and 29
+
 var sudoku_0 = [
   ["X", "X", "X", "X"],
   ["X", "X", "X", "X"],

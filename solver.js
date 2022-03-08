@@ -320,11 +320,10 @@ var sudoku_50 = [
   ["2", "X", "X", "4"],
 ];
 
-var sudoku = sudoku_12;
-//18 is not a 29 lost
+var sudoku = sudoku_13;
 // test not passed row/column does account4:
-//list = [5,12,15,32,35,40,44, 2,22,24,33,36,39, 13,31,41
-//square pass: 5
+//list = [2,5,13,15,22,31,33,35,36,39, 40,41,44,
+//square pass: 2?,5,13,24,31,35,36,39,41,44,
 // square count in else after function three_numbers_in_row
 var first_col = sudoku[0];
 var second_col = sudoku[1];
